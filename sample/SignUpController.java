@@ -1,10 +1,16 @@
 package sample;
 
+import javafx.event.ActionEvent;
 import java.net.URL;
+import java.sql.Connection;
+import java.sql.DriverManager;
+import java.sql.ResultSet;
+import java.sql.Statement;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import java.sql.*;
 
 public class SignUpController {
 
@@ -34,6 +40,19 @@ public class SignUpController {
 
     @FXML
     private TextField SignUpAdress;
+
+    @FXML
+    void RegistrationBtn(ActionEvent event) {
+        String usernameS = SignUpLogin.getText();
+        String passwordS = SignUpPassword.getText();
+        String last_name = SignUpLastName.getText();
+        String first_name = SignUpName.getText();
+        String telephone = SignUpTele.getText();
+        String addres = SignUpAdress.getText();
+        int ID = ScriptsSQL.uznatID();
+        System.out.println(ID);
+        ScriptsSQL.SignUp(ID+1,last_name,first_name,telephone,addres,0,usernameS,passwordS);
+    }
 
     @FXML
     void initialize() {

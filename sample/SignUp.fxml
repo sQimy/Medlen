@@ -6,9 +6,9 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: #d9a46f;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: #d9a46f;" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
     <children>
-        <Button fx:id="SignUpReg" layoutX="396.0" layoutY="447.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="135.0" text="Зарегестрироваться" />
+        <Button fx:id="SignUpReg" layoutX="396.0" layoutY="447.0" mnemonicParsing="false" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="135.0" text="Зарегестрироваться" />
         <TextField fx:id="SignUpPassword" layoutX="475.0" layoutY="376.0" prefHeight="40.0" prefWidth="276.0" promptText="Пароль" />
         <TextField fx:id="SignUpLogin" layoutX="171.0" layoutY="376.0" prefHeight="40.0" prefWidth="276.0" promptText="Логин" />
         <AnchorPane layoutX="-2.0" prefHeight="135.0" prefWidth="906.0" style="-fx-background-color: #238fe8;">
@@ -26,7 +26,7 @@
             </children>
         </AnchorPane>
       <TextField fx:id="SignUpName" layoutX="309.0" layoutY="169.0" prefHeight="40.0" prefWidth="276.0" promptText="Имя" />
-      <TextField fx:id="SignUpLastName" layoutX="309.0" layoutY="217.0" prefHeight="40.0" prefWidth="276.0" promptText="Фамилия" />
+      <TextField fx:id="SignUpLastName" layoutX="309.0" layoutY="217.0" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="276.0" promptText="Фамилия" />
       <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Text" />
       <TextField fx:id="SignUpTele" layoutX="309.0" layoutY="314.0" prefHeight="40.0" prefWidth="276.0" promptText="Телефон" />
       <TextField fx:id="SignUpAdress" layoutX="309.0" layoutY="264.0" prefHeight="40.0" prefWidth="276.0" promptText="Адрес" />
