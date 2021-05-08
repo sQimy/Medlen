@@ -12,8 +12,8 @@ public class ScriptsSQL {
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)) {
                 Statement statement = conn.createStatement();
-                int resultSet = statement.executeUpdate("insert into users values ("+ID+",'"+last_name+"','"+first_name+"','"+telephone+"','"+addres+"',"+rating+")");
-                int resultSet1 = statement.executeUpdate("insert into regaut values ("+"'"+username1+"','"+passwordS+"',"+ID+")");
+                statement.executeUpdate("insert into users values ("+ID+",'"+last_name+"','"+first_name+"','"+telephone+"','"+addres+"',"+rating+")");
+                statement.executeUpdate("insert into regaut values ("+"'"+username1+"','"+passwordS+"',"+ID+")");
                 System.out.println("Connection to Store DB succesfull!");
             }
         } catch (Exception ex) {
@@ -42,6 +42,30 @@ public class ScriptsSQL {
             }
         } catch (Exception ex) {
             System.out.println("Connection failed узнать ID...");
+
+            System.out.println(ex);
+        }
+        return 0;
+    }
+    public static int uznatUsername(String t) {
+        try {
+            String url = "jdbc:mysql://localhost/selfs";
+            String username = "root";
+            String password = "Danik0124";
+
+            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery("select username from regaut where username="+"'"+t+"'");
+                while (resultSet.next()) {
+                    String user = resultSet.getString(1);
+                    System.out.printf("%s\n ", user);
+                    return 1;
+                }
+                System.out.println("Connection to Store DB succesfull!");
+            }
+        } catch (Exception ex) {
+            System.out.println("Connection failed узнать Username...");
 
             System.out.println(ex);
         }
