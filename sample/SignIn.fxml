@@ -6,25 +6,16 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: #d9a46f;" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignInController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="363.0" prefWidth="532.0" style="-fx-background-color: 0;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignInController">
    <children>
-      <Button fx:id="SignInReg" layoutX="457.0" layoutY="442.0" mnemonicParsing="false" onAction="#Reg" prefHeight="40.0" prefWidth="135.0" text="Зарегестрироваться" />
-      <Button fx:id="SignInBtn" layoutX="319.0" layoutY="381.0" mnemonicParsing="false" onAction="#Vhod" prefHeight="40.0" prefWidth="276.0" text="Войти" />
-      <TextField fx:id="SignInPassword" layoutX="319.0" layoutY="262.0" prefHeight="40.0" prefWidth="276.0" promptText="Пароль" />
-      <TextField fx:id="SignInLogin" layoutX="319.0" layoutY="203.0" prefHeight="40.0" prefWidth="276.0" promptText="Логин" />
-      <AnchorPane prefHeight="135.0" prefWidth="906.0" style="-fx-background-color: #238fe8;">
-         <children>
-            <Text fill="WHITE" layoutX="129.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Банковская система " textAlignment="CENTER" wrappingWidth="648.13671875">
-               <font>
-                  <Font name="Comic Sans MS" size="44.0" />
-               </font>
-            </Text>
-            <Text fill="#00ffc3" layoutX="315.0" layoutY="107.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;Coiny 2.0&quot;;" text="Авторизация" textAlignment="CENTER" wrappingWidth="275.99999207258224">
-               <font>
-                  <Font size="37.0" />
-               </font>
-            </Text>
-         </children>
-      </AnchorPane>
+      <Button fx:id="SignInReg" layoutX="266.0" layoutY="282.0" mnemonicParsing="false" onAction="#Reg" prefHeight="40.0" prefWidth="135.0" style="-fx-background-radius: 50;" text="Зарегестрироваться" />
+      <Button fx:id="SignInBtn" layoutX="128.0" layoutY="229.0" mnemonicParsing="false" onAction="#Vhod" prefHeight="40.0" prefWidth="276.0" style="-fx-background-radius: 50; -fx-border-style: 50;" text="Войти" />
+      <TextField fx:id="SignInPassword" layoutX="128.0" layoutY="163.0" onMouseClicked="#SigInPassClick" prefHeight="40.0" prefWidth="276.0" promptText="Пароль" style="-fx-background-radius: 50; -fx-background-color: #ebe9e9;" />
+      <TextField fx:id="SignInLogin" layoutX="128.0" layoutY="109.0" onMouseClicked="#SignInLogClicked" prefHeight="40.0" prefWidth="276.0" promptText="Логин" style="-fx-background-radius: 50; -fx-background-color: #ebe9e9; -fx-focus-traversable: True;" />
+      <Text layoutX="131.0" layoutY="72.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Авторизация">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Text>
    </children>
 </AnchorPane>
