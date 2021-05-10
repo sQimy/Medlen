@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
 
@@ -67,7 +68,7 @@ public class SignUpController {
     private Text ErrorFakeLogin;
 
     @FXML
-    void RegistrationBtn(ActionEvent event) {
+    void RegistrationBtn(ActionEvent event) throws IOException {
         String usernameS = SignUpLogin.getText();
         String passwordS = SignUpPassword.getText();
         String last_name = SignUpLastName.getText();
@@ -83,18 +84,16 @@ public class SignUpController {
         {
             int ID = ScriptsSQL.uznatID();
             ScriptsSQL.SignUp(ID + 1, last_name, first_name, telephone, addres, 0, usernameS, passwordS);
-            FXMLLoader loaderSignUp = new FXMLLoader();
-            loaderSignUp.setLocation(getClass().getResource("/sample/SignIn.fxml"));
-            try {
-                loaderSignUp.load();
-            } catch (IOException e) {
-                e.printStackTrace();
-                System.out.println("Я не запустил новое окно после регистрации");
-            }
-            Parent root = loaderSignUp.getRoot();
-            Stage stage = new Stage();
+
+            Stage stage = (Stage) SignUpReg.getScene().getWindow();
+            stage.close();
+            FXMLLoader loader = new FXMLLoader(getClass().getResource("SignIn.fxml"));
+            Parent root = (Parent) loader.load();
+            stage = new Stage();
+            stage.initModality(Modality.APPLICATION_MODAL);
+            stage.setTitle("Bank System");
             stage.setScene(new Scene(root));
-            stage.showAndWait();
+            stage.show();
         } else {
             if (usernameS == "" || usernameS.length()>20){
                 ErrorLogin.setOpacity(1);
@@ -145,24 +144,7 @@ public class SignUpController {
         assert SignUpLastName != null : "fx:id=\"SignUpLastName\" was not injected: check your FXML file 'SignUp.fxml'.";
         assert SignUpTele != null : "fx:id=\"SignUpTele\" was not injected: check your FXML file 'SignUp.fxml'.";
         assert SignUpAdress != null : "fx:id=\"SignUpAdress\" was not injected: check your FXML file 'SignUp.fxml'.";
-        /*SignUpReg.setOnAction(actionEvent ->
-                {
-                    SignUpReg.getScene().getWindow().hide();
 
-                    FXMLLoader loader = new FXMLLoader();
-                    loader.setLocation(getClass().getResource("SignIn.fxml"));
-
-                    try {
-                        loader.load();
-                    } catch (IOException e) {
-                        e.printStackTrace();
-                    }
-
-                    Parent root = loader.getRoot();
-                    Stage stage = new Stage();
-                    stage.setScene(new Scene(root));
-                    stage.showAndWait();
-                });*/
     }
 
 

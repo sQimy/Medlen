@@ -11,13 +11,13 @@ public class Main extends Application {
 
 
     @Override
-    public void start(Stage primaryStage) throws Exception{
+    public void start(Stage Stage) throws Exception{
         Font.loadFont(getClass().getResourceAsStream("/resources/fonts/20610.ttf"), 14);
         Parent root = FXMLLoader.load(getClass().getResource("SignIn.fxml"));
-        primaryStage.setTitle("Bank System");
-        primaryStage.setScene(new Scene(root, 906, 591));
-        primaryStage.setResizable(false);
-        primaryStage.show();
+        Stage.setTitle("Bank System");
+        Stage.setScene(new Scene(root, 906, 591));
+        Stage.setResizable(false);
+        Stage.show();
     }
 
 

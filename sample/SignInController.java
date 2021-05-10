@@ -10,6 +10,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 public class SignInController {
@@ -21,7 +22,7 @@ public class SignInController {
     private URL location;
 
     @FXML
-    private Button SingInReg;
+    private Button SignInReg;
 
     @FXML
     private Button SignInBtn;
@@ -32,29 +33,29 @@ public class SignInController {
     @FXML
     private TextField SignInLogin;
 
+    @FXML
+    void Reg(ActionEvent event) throws IOException {
+
+        Stage stage = (Stage) SignInReg.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
+        Parent root = (Parent) loader.load();
+        stage = new Stage();
+        stage.initModality(Modality.APPLICATION_MODAL);
+        stage.setTitle("Bank System");
+        stage.setScene(new Scene(root));
+        stage.show();
+
+    }
+
+    @FXML
+    void Vhod(ActionEvent event) {
+
+    }
+
 
     @FXML
     void initialize() {
-     SingInReg.setOnAction(event ->
-     {
-         SingInReg.getScene().getWindow().hide();
-
-         FXMLLoader loader = new FXMLLoader();
-         loader.setLocation(getClass().getResource("/sample/SignUp.fxml"));
-
-         try {
-             loader.load();
-         } catch (IOException e) {
-             e.printStackTrace();
-         }
-
-         Parent root = loader.getRoot();
-         Stage stage = new Stage();
-         stage.setScene(new Scene(root));
-         stage.showAndWait();
-
-
-     });
 
     }
 }

@@ -8,8 +8,8 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: #d9a46f;" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignInController">
    <children>
-      <Button fx:id="SingInReg" layoutX="457.0" layoutY="442.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="135.0" text="Зарегестрироваться" />
-      <Button fx:id="SignInBtn" layoutX="319.0" layoutY="381.0" mnemonicParsing="false" prefHeight="40.0" prefWidth="276.0" text="Войти" />
+      <Button fx:id="SignInReg" layoutX="457.0" layoutY="442.0" mnemonicParsing="false" onAction="#Reg" prefHeight="40.0" prefWidth="135.0" text="Зарегестрироваться" />
+      <Button fx:id="SignInBtn" layoutX="319.0" layoutY="381.0" mnemonicParsing="false" onAction="#Vhod" prefHeight="40.0" prefWidth="276.0" text="Войти" />
       <TextField fx:id="SignInPassword" layoutX="319.0" layoutY="262.0" prefHeight="40.0" prefWidth="276.0" promptText="Пароль" />
       <TextField fx:id="SignInLogin" layoutX="319.0" layoutY="203.0" prefHeight="40.0" prefWidth="276.0" promptText="Логин" />
       <AnchorPane prefHeight="135.0" prefWidth="906.0" style="-fx-background-color: #238fe8;">
