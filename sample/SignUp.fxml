@@ -6,40 +6,26 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: #d9a46f;" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: 0;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
     <children>
-        <Button fx:id="SignUpReg" layoutX="396.0" layoutY="447.0" mnemonicParsing="false" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="135.0" text="Зарегестрироваться" />
-        <TextField fx:id="SignUpPassword" layoutX="475.0" layoutY="376.0" prefHeight="40.0" prefWidth="276.0" promptText="Пароль (макс. 20)" />
-        <TextField fx:id="SignUpLogin" layoutX="171.0" layoutY="376.0" prefHeight="40.0" prefWidth="276.0" promptText="Логин (макс. 20)" />
-        <AnchorPane prefHeight="135.0" prefWidth="906.0" style="-fx-background-color: #238fe8;">
-            <children>
-                <Text fill="WHITE" layoutX="129.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Банковская система " textAlignment="CENTER" wrappingWidth="648.13671875">
-                    <font>
-                        <Font name="Comic Sans MS" size="44.0" />
-                    </font>
-                </Text>
-            <Text fill="#00ffc3" layoutX="312.0" layoutY="100.0" strokeType="OUTSIDE" strokeWidth="0.0" style="-fx-font-family: &quot;Coiny 2.0&quot;;" text="Регистрация" textAlignment="CENTER" wrappingWidth="310.0000123679638">
-               <font>
-                  <Font name="Georgia" size="37.0" />
-               </font>
-            </Text>
-            </children>
-        </AnchorPane>
-      <TextField fx:id="SignUpName" layoutX="309.0" layoutY="169.0" prefHeight="40.0" prefWidth="310.0" promptText="Имя (макс.20)" />
-      <TextField fx:id="SignUpLastName" layoutX="309.0" layoutY="217.0" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="310.0" promptText="Фамилия (макс. 30)" />
-      <TextField fx:id="SignUpTele" layoutX="309.0" layoutY="314.0" prefHeight="40.0" prefWidth="310.0" promptText="Телефон (без +7 макс. 10)" />
-      <TextField fx:id="SignUpAdress" layoutX="309.0" layoutY="264.0" prefHeight="40.0" prefWidth="310.0" promptText="Адрес (макс. 45)" />
-      <Text fx:id="ErrorName" fill="#ff0000cc" layoutX="518.0" layoutY="193.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверное имя" wrappingWidth="100.13671875">
+        <Button fx:id="SignUpReg" layoutX="397.0" layoutY="478.0" mnemonicParsing="false" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="135.0" text="Зарегестрироваться" />
+        <TextField fx:id="SignUpPassword" layoutX="475.0" layoutY="403.0" onMouseClicked="#SignUpPassClicked" prefHeight="40.0" prefWidth="276.0" promptText="Пароль (макс. 20)" style="-fx-background-radius: 50; -fx-background-color: #ebe9e9;" />
+        <TextField fx:id="SignUpLogin" layoutX="171.0" layoutY="403.0" onMouseClicked="#SignUpLoginClicked" prefHeight="40.0" prefWidth="276.0" promptText="Логин (макс. 20)" style="-fx-background-radius: 50; -fx-background-color: #ebe9e9;" />
+      <TextField fx:id="SignUpName" layoutX="244.0" layoutY="160.0" onMouseClicked="#SignUpNameClicked" prefHeight="40.0" prefWidth="433.0" promptText="Имя (макс.20)" style="-fx-background-radius: 50; -fx-background-color: #ebe9e9;" />
+      <TextField fx:id="SignUpLastName" layoutX="244.0" layoutY="216.0" onAction="#RegistrationBtn" onMouseClicked="#SignUpLastNameClicked" prefHeight="40.0" prefWidth="433.0" promptText="Фамилия (макс. 30)" style="-fx-background-radius: 50; -fx-background-color: #ebe9e9;" />
+      <TextField fx:id="SignUpTele" layoutX="241.0" layoutY="334.0" onMouseClicked="#SignUpPhoneClicked" prefHeight="40.0" prefWidth="439.0" promptText="Телефон (без +7 макс. 10)" style="-fx-background-radius: 50; -fx-background-color: #ebe9e9;" />
+      <TextField fx:id="SignUpAdress" layoutX="244.0" layoutY="271.0" onMouseClicked="#SignUpAdresClicked" prefHeight="40.0" prefWidth="433.0" promptText="Адрес (макс. 45)" style="-fx-background-radius: 50; -fx-background-color: #ebe9e9;" />
+      <Text fx:id="ErrorName" fill="#ff0000cc" layoutX="567.0" layoutY="193.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверное имя" wrappingWidth="92.13671875">
          <font>
             <Font name="Informal Roman" size="14.0" />
          </font>
       </Text>
-      <Text fx:id="ErrorLastname" fill="#ff0000cc" layoutX="488.0" layoutY="240.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверная фамилия" wrappingWidth="129.0000003874302">
+      <Text fx:id="ErrorLastname" fill="#ff0000cc" layoutX="483.0" layoutY="248.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверная фамилия" wrappingWidth="129.0000003874302">
          <font>
             <Font name="Chiller" size="14.0" />
          </font>
       </Text>
-      <Text fx:id="ErrorAddres" fill="#ff0000cc" layoutX="506.0" layoutY="287.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный адрес" wrappingWidth="110.13671875">
+      <Text fx:id="ErrorAddres" fill="#ff0000cc" layoutX="493.0" layoutY="287.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный адрес" wrappingWidth="110.13671875">
          <font>
             <Font name="Chiller" size="14.0" />
          </font>
@@ -62,6 +48,11 @@
       <Text fx:id="ErrorFakeLogin" fill="#ff0000cc" layoutX="362.0" layoutY="399.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Логин занят" wrappingWidth="84.1367170214653">
          <font>
             <Font name="Chiller" size="14.0" />
+         </font>
+      </Text>
+      <Text layoutX="291.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Авторизация" textAlignment="CENTER" wrappingWidth="323.13671875">
+         <font>
+            <Font size="45.0" />
          </font>
       </Text>
     </children>

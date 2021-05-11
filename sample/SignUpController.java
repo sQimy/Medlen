@@ -11,6 +11,7 @@ import javafx.scene.Parent;
 import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
+import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
@@ -18,6 +19,18 @@ import javafx.scene.text.Text;
 import java.sql.*;
 
 public class SignUpController {
+
+    @FXML
+    void ColorChange(TextField Change)
+    {
+        SignUpPassword.setStyle("-fx-background-color: #ebe9e9; -fx-background-radius: 50");
+        SignUpLogin.setStyle("-fx-background-color: #ebe9e9; -fx-background-radius: 50");
+        SignUpName.setStyle("-fx-background-color: #ebe9e9; -fx-background-radius: 50");
+        SignUpLastName.setStyle("-fx-background-color: #ebe9e9; -fx-background-radius: 50");
+        SignUpTele.setStyle("-fx-background-color: #ebe9e9; -fx-background-radius: 50");
+        SignUpAdress.setStyle("-fx-background-color: #ebe9e9; -fx-background-radius: 50");
+        Change.setStyle("-fx-background-color: #e1dddd; -fx-background-radius: 50");
+    }
 
     @FXML
     private ResourceBundle resources;
@@ -66,6 +79,38 @@ public class SignUpController {
 
     @FXML
     private Text ErrorFakeLogin;
+
+    @FXML
+    void SignUpAdresClicked(MouseEvent event) {
+        ColorChange(SignUpAdress);
+
+    }
+
+    @FXML
+    void SignUpLastNameClicked(MouseEvent event) {
+            ColorChange(SignUpLastName);
+    }
+
+    @FXML
+    void SignUpLoginClicked(MouseEvent event) {
+            ColorChange(SignUpLogin);
+    }
+
+    @FXML
+    void SignUpNameClicked(MouseEvent event) {
+            ColorChange(SignUpName);
+    }
+
+    @FXML
+    void SignUpPassClicked(MouseEvent event) {
+            ColorChange(SignUpPassword);
+    }
+
+    @FXML
+    void SignUpPhoneClicked(MouseEvent event) {
+        ColorChange(SignUpTele);
+    }
+
 
     @FXML
     void RegistrationBtn(ActionEvent event) throws IOException {
