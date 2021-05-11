@@ -49,8 +49,29 @@ public class SignInController {
     }
 
     @FXML
-    void Vhod(ActionEvent event) {
+    void Vhod(ActionEvent event) throws IOException {
+        String login = SignInLogin.getText();
+        String password = SignInPassword.getText();
+        int checklog = ScriptsSQL.uznatUsername(login);
+        if (checklog==1) {
+            String checkpas = ScriptsSQL.uznatPassword(login);
+            System.out.println("Проверка логина " + checklog);
+            System.out.println("Пароль " + checkpas + " от логина " + login);
+            if (password.equals(checkpas)) {
 
+                Stage stage = (Stage) SignInBtn.getScene().getWindow();
+                stage.close();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("General.fxml"));
+                Parent root = (Parent) loader.load();
+                stage = new Stage();
+                stage.initModality(Modality.APPLICATION_MODAL);
+                stage.setTitle("Bank System");
+                stage.setScene(new Scene(root));
+                stage.show();
+
+            } else
+                    System.out.println("Неверный пароль");
+        } else System.out.println("Такого логина не существует");
     }
 
 

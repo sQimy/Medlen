@@ -59,7 +59,6 @@ public class ScriptsSQL {
                 ResultSet resultSet = statement.executeQuery("select username from regaut where username="+"'"+t+"'");
                 while (resultSet.next()) {
                     String user = resultSet.getString(1);
-                    System.out.printf("%s\n ", user);
                     return 1;
                 }
                 System.out.println("Connection to Store DB succesfull!");
@@ -71,4 +70,28 @@ public class ScriptsSQL {
         }
         return 0;
     }
+    public static String uznatPassword(String log) {
+        try {
+            String url = "jdbc:mysql://localhost/selfs";
+            String username = "root";
+            String password = "Danik0124";
+
+            Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
+            try (Connection conn = DriverManager.getConnection(url, username, password)) {
+                Statement statement = conn.createStatement();
+                ResultSet resultSet = statement.executeQuery("select password from regaut where username="+"'"+log+"'");
+                while (resultSet.next()) {
+                    String newpas = resultSet.getString(1);
+                    return newpas;
+                }
+                System.out.println("Connection to Store DB succesfull!");
+            }
+        } catch (Exception ex) {
+            System.out.println("Connection failed узнать Username...");
+
+            System.out.println(ex);
+        }
+        return "Что то пошло не так на проверке пароля";
+    }
+
 }
