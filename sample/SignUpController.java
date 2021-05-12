@@ -93,9 +93,9 @@ public class SignUpController {
             FXMLLoader loader = new FXMLLoader(getClass().getResource("SignIn.fxml"));
             Parent root = (Parent) loader.load();
             stage = new Stage();
-            stage.initModality(Modality.APPLICATION_MODAL);
             stage.setTitle("Bank System");
-            stage.setScene(new Scene(root));
+            stage.setScene(new Scene(root,906,591));
+            stage.setResizable(false);
             stage.show();
         } else {
             if (usernameS == "" || usernameS.length()>20){

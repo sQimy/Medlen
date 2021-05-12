@@ -42,9 +42,9 @@ public class SignInController {
         FXMLLoader loader = new FXMLLoader(getClass().getResource("SignUp.fxml"));
         Parent root = (Parent) loader.load();
         stage = new Stage();
-        stage.initModality(Modality.APPLICATION_MODAL);
         stage.setTitle("Bank System");
-        stage.setScene(new Scene(root));
+        stage.setScene(new Scene(root,906,591));
+        stage.setResizable(false);
         stage.show();
 
     }
@@ -65,9 +65,9 @@ public class SignInController {
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("General.fxml"));
                 Parent root = (Parent) loader.load();
                 stage = new Stage();
-                stage.initModality(Modality.APPLICATION_MODAL);
                 stage.setTitle("Bank System");
-                stage.setScene(new Scene(root));
+                stage.setScene(new Scene(root,906,591));
+                stage.setResizable(false);
                 stage.show();
 
             } else
