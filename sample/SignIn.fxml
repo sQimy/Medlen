@@ -21,11 +21,11 @@
          <font>
             <Font size="18.0" />
          </font></Button>
-      <TextField fx:id="SignInPassword" layoutX="128.0" layoutY="163.0" prefHeight="40.0" prefWidth="276.0" promptText="Пароль" style="-fx-background-color: #3a3c49;-fx-text-fill: #c7fcec;">
+      <TextField fx:id="SignInPassword" layoutX="128.0" layoutY="163.0" onMouseClicked="#SigInPassClick" prefHeight="40.0" prefWidth="276.0" promptText="Пароль" style="-fx-background-color: #3a3c49;-fx-text-fill: #c7fcec;">
          <font>
             <Font size="16.0" />
          </font></TextField>
-      <TextField fx:id="SignInLogin" layoutX="128.0" layoutY="109.0" prefHeight="40.0" prefWidth="276.0" promptText="Логин" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;">
+      <TextField fx:id="SignInLogin" layoutX="128.0" layoutY="109.0" onMouseClicked="#SignInLogClicked" prefHeight="40.0" prefWidth="276.0" promptText="Логин" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;">
          <font>
             <Font size="16.0" />
          </font></TextField>
