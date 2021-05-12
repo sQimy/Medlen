@@ -35,19 +35,6 @@ public class SignInController {
     private TextField SignInLogin;
 
     @FXML
-    void SignInLogClicked(MouseEvent event) {
-    SignInLogin.setStyle("-fx-background-color: #e1dddd; -fx-background-radius: 50");
-    SignInPassword.setStyle("-fx-background-color: #ebe9e9; -fx-background-radius: 50");
-    }
-
-    @FXML
-    void SigInPassClick(MouseEvent event) {
-        SignInPassword.setStyle("-fx-background-color: #e1dddd; -fx-background-radius: 50");
-        SignInLogin.setStyle("-fx-background-color: #ebe9e9; -fx-background-radius: 50");
-    }
-
-
-    @FXML
     void Reg(ActionEvent event) throws IOException {
 
         Stage stage = (Stage) SignInReg.getScene().getWindow();
