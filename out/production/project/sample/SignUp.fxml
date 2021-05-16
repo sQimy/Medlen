@@ -1,0 +1,125 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.effect.ColorAdjust?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: #282a34;" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
+    <children>
+        <Button fx:id="SignUpReg" layoutX="355.0" layoutY="478.0" mnemonicParsing="false" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="195.0" style="-fx-background-color: #39b8b8; -fx-background-radius: 50;" text="Зарегестрироваться" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font></Button>
+        <TextField fx:id="SignUpPassword" layoutX="522.0" layoutY="403.0" onMouseClicked="#SignUpPassClicked" prefHeight="40.0" prefWidth="276.0" promptText="Пароль (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+        <TextField fx:id="SignUpLogin" layoutX="144.0" layoutY="403.0" onMouseClicked="#SignUpLoginClicked" prefHeight="40.0" prefWidth="276.0" promptText="Логин (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpName" layoutX="244.0" layoutY="160.0" onMouseClicked="#SignUpNameClicked" prefHeight="40.0"  prefWidth="433.0" promptText="Имя (макс.20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpLastName" layoutX="244.0" layoutY="216.0" onMouseClicked="#SignUpLastNameClicked" onAction="#RegistrationBtn"  prefHeight="40.0" prefWidth="433.0" promptText="Фамилия (макс. 30)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpTele" layoutX="241.0" layoutY="334.0" onMouseClicked="#SignUpPhoneClicked" prefHeight="40.0" prefWidth="433.0" promptText="Телефон (без +7 макс. 10)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpAdress" layoutX="244.0" layoutY="271.0" onMouseClicked="#SignUpAdresClicked" prefHeight="40.0" prefWidth="433.0" promptText="E-Mail (макс. 45)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <Text fx:id="ErrorName" fill="#f44949ed" layoutX="574.0" layoutY="184.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверное имя" wrappingWidth="92.13671875">
+         <font>
+            <Font name="Informal Roman" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="ErrorLastname" fill="#f44949cc" layoutX="549.0" layoutY="240.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверная фамилия" wrappingWidth="129.0000003874302">
+         <font>
+            <Font name="Chiller" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="ErrorAddres" fill="#f44949cc" layoutX="565.0" layoutY="294.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный адрес" wrappingWidth="110.13671875">
+         <font>
+            <Font name="Chiller" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="ErrorTelephone" fill="#f44949cc" layoutX="530.0" layoutY="358.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный телефон" wrappingWidth="135.00000376999378">
+         <font>
+            <Font name="Chiller" size="15.0" />
+         </font>
+      </Text>
+      <Text fx:id="ErrorLogin" fill="#f44949cc" layoutX="309.0" layoutY="427.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный логин" wrappingWidth="110.1367170214653">
+         <font>
+            <Font name="Chiller" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="ErrorPassword" fill="#f44949cc" layoutX="677.0" layoutY="426.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный пароль" wrappingWidth="119.00000232458115">
+         <font>
+            <Font name="Chiller" size="14.0" />
+         </font>
+      </Text>
+      <Text fx:id="ErrorFakeLogin" fill="#f44949cc" layoutX="335.0" layoutY="427.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Логин занят" wrappingWidth="84.1367170214653">
+         <font>
+            <Font name="Chiller" size="14.0" />
+         </font>
+      </Text>
+      <Text fill="#d7d7d7" layoutX="291.0" layoutY="95.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Регистрация" textAlignment="CENTER" wrappingWidth="323.13671875">
+         <font>
+            <Font size="45.0" />
+         </font>
+      </Text>
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#444654" height="40.0" layoutX="204.0" layoutY="160.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#444654" height="40.0" layoutX="204.0" layoutY="216.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#444654" height="40.0" layoutX="204.0" layoutY="271.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#444654" height="40.0" layoutX="204.0" layoutY="334.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#444654" height="40.0" layoutX="483.0" layoutY="403.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" />
+      <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#444654" height="40.0" layoutX="104.0" layoutY="403.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" width="40.0" />
+      <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="208.0" layoutY="163.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Icons/149086-essential-set/png/id-card-4.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="208.0" layoutY="267.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Icons/mail.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="208.0" layoutY="220.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Icons/149086-essential-set/png/id-card-4.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="208.0" layoutY="338.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Icons/149086-essential-set/png/smartphone-6.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="40.0" fitWidth="33.0" layoutX="108.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Icons/149086-essential-set/png/user-3.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
+         </effect>
+      </ImageView>
+      <ImageView fitHeight="33.0" fitWidth="33.0" layoutX="487.0" layoutY="407.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/Icons/149086-essential-set/png/locked-4.png" />
+         </image>
+         <effect>
+            <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
+         </effect>
+      </ImageView>
+      <Text fx:id="ErrorPassword1" fill="#f44949cc" layoutX="663.0" layoutY="409.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный пароль" wrappingWidth="119.00000232458115">
+         <font>
+            <Font name="Chiller" size="14.0" />
+         </font>
+      </Text>
+    </children>
+</AnchorPane>
