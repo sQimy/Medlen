@@ -6,29 +6,9 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-public class GeneralController {
 
-    @FXML
-    private ResourceBundle resources;
 
-    @FXML
-    private URL location;
-
-    @FXML
-    private Button settingsbtn;
-
-    @FXML
-    private Button supbtn;
-
-    @FXML
-    void setting(ActionEvent event) {
-
-    }
-
-    @FXML
-    void sup(ActionEvent event) {
-
-    }
+    
 
     @FXML
     void initialize() {
