@@ -138,7 +138,7 @@ public class SignUpController {
             Parent root = (Parent) loader.load();
             stage = new Stage();
             stage.setTitle("Bank System");
-            stage.setScene(new Scene(root,906,591));
+            stage.setScene(new Scene(root,532,363));
             stage.setResizable(false);
             stage.show();
         } else {
