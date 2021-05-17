@@ -35,18 +35,6 @@ public class SignInController {
     private TextField SignInLogin;
 
     @FXML
-    void SignInLogClicked(MouseEvent event) {
-        SignInLogin.setStyle("-fx-background-color: #3a3c4978;-fx-text-fill: #c7fcec;");
-        SignInPassword.setStyle("-fx-background-color: #3a3c49;-fx-text-fill: #c7fcec;");
-    }
-
-    @FXML
-    void SigInPassClick(MouseEvent event) {
-        SignInPassword.setStyle("-fx-background-color: #3a3c4978; -fx-text-fill: #c7fcec;");
-        SignInLogin.setStyle("-fx-background-color: #3a3c49;-fx-text-fill: #c7fcec;");
-    }
-
-    @FXML
     void Reg(ActionEvent event) throws IOException {
 
         Stage stage = (Stage) SignInReg.getScene().getWindow();

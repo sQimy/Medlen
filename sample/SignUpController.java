@@ -21,18 +21,6 @@ import java.sql.*;
 public class SignUpController {
 
     @FXML
-    void ColorChange(TextField Change)
-    {
-        SignUpPassword.setStyle("-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;");
-        SignUpLogin.setStyle("-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;");
-        SignUpName.setStyle("-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;");
-        SignUpLastName.setStyle("-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;");
-        SignUpTele.setStyle("-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;");
-        SignUpAdress.setStyle("-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;");
-        Change.setStyle("-fx-background-color: #3a3c4978; -fx-text-fill: #c7fcec;");
-    }
-
-    @FXML
     private ResourceBundle resources;
 
     @FXML
@@ -81,41 +69,26 @@ public class SignUpController {
     private Text ErrorFakeLogin;
 
     @FXML
-    void SignUpAdresClicked(MouseEvent event) {
-        ColorChange(SignUpAdress);
-
-    }
+    private Button ButBack;
 
     @FXML
-    void SignUpLastNameClicked(MouseEvent event) {
-        ColorChange(SignUpLastName);
-    }
+    void GoToSignIn(ActionEvent event) throws IOException {
+        Stage stage = (Stage) ButBack.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SignIn.fxml"));
+        Parent root = (Parent) loader.load();
+        stage = new Stage();
+        stage.setTitle("Bank System");
+        stage.setScene(new Scene(root,532,363));
+        stage.setResizable(false);
+        stage.show();
 
-    @FXML
-    void SignUpLoginClicked(MouseEvent event) {
-        ColorChange(SignUpLogin);
-    }
-
-    @FXML
-    void SignUpNameClicked(MouseEvent event) {
-        ColorChange(SignUpName);
-    }
-
-    @FXML
-    void SignUpPassClicked(MouseEvent event) {
-        ColorChange(SignUpPassword);
-    }
-
-    @FXML
-    void SignUpPhoneClicked(MouseEvent event) {
-        ColorChange(SignUpTele);
     }
 
 
 
     @FXML
     void RegistrationBtn(ActionEvent event) throws IOException {
-        SignUpName.setStyle("-fx-text-inner-color: red;");
         String usernameS = SignUpLogin.getText();
         String passwordS = SignUpPassword.getText();
         String last_name = SignUpLastName.getText();
@@ -130,7 +103,7 @@ public class SignUpController {
                 telephone.length() == 10) && check == true && checkUser == 0)
         {
             int ID = ScriptsSQL.uznatID();
-            ScriptsSQL.SignUp(ID + 1, last_name, first_name, telephone, addres, 0, usernameS, passwordS);
+            ScriptsSQL.SignUp( ID+1,last_name, first_name, telephone, addres, 0, usernameS, passwordS);
 
             Stage stage = (Stage) SignUpReg.getScene().getWindow();
             stage.close();
@@ -138,7 +111,7 @@ public class SignUpController {
             Parent root = (Parent) loader.load();
             stage = new Stage();
             stage.setTitle("Bank System");
-            stage.setScene(new Scene(root,906,591));
+            stage.setScene(new Scene(root,532,363));
             stage.setResizable(false);
             stage.show();
         } else {
