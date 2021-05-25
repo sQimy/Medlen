@@ -6,11 +6,6 @@ import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.scene.control.Button;
 
-<<<<<<< Updated upstream
-
-
-    
-=======
 public class GeneralController {
 
     @FXML
@@ -20,13 +15,34 @@ public class GeneralController {
     private URL location;
 
     @FXML
-    private Button settingsbtn;
+    private Button SettingsBtn;
 
     @FXML
     private Button supbtn;
 
     @FXML
-    void setting(ActionEvent event) {
+    private Button CredHistoryBtn;
+
+    @FXML
+    private Button InsuranceBtn;
+
+    @FXML
+    void CredHistoryAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void SettingsAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void TakeCreditAction(ActionEvent event) {
+
+    }
+
+    @FXML
+    void TakeInsurance(ActionEvent event) {
 
     }
 
@@ -34,12 +50,13 @@ public class GeneralController {
     void sup(ActionEvent event) {
 
     }
->>>>>>> Stashed changes
 
     @FXML
     void initialize() {
-        assert settingsbtn != null : "fx:id=\"settingsbtn\" was not injected: check your FXML file 'General.fxml'.";
+        assert SettingsBtn != null : "fx:id=\"SettingsBtn\" was not injected: check your FXML file 'General.fxml'.";
         assert supbtn != null : "fx:id=\"supbtn\" was not injected: check your FXML file 'General.fxml'.";
+        assert CredHistoryBtn != null : "fx:id=\"CredHistoryBtn\" was not injected: check your FXML file 'General.fxml'.";
+        assert InsuranceBtn != null : "fx:id=\"InsuranceBtn\" was not injected: check your FXML file 'General.fxml'.";
 
     }
 }

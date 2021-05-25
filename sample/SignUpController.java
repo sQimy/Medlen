@@ -2,6 +2,7 @@ package sample;
 
 import javafx.event.ActionEvent;
 
+import java.awt.*;
 import java.io.IOException;
 import java.net.URL;
 import java.util.ResourceBundle;
@@ -163,6 +164,7 @@ public class SignUpController {
             if (first_name == "" || first_name.length()>20){
                 ErrorName.setOpacity(1);
             }
+            ColorChange(null);
             System.out.println("Не все поля заполнены ");
         }
 
