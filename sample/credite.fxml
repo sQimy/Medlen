@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Slider?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="906.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.crediteController">
+   <children>
+      <AnchorPane prefHeight="540.0" prefWidth="176.0" style="-fx-background-color: white;" />
+      <ImageView fitHeight="546.0" fitWidth="728.0" layoutX="179.0" layoutY="-3.0">
+         <image>
+            <Image url="@images/back.png" />
+         </image>
+      </ImageView>
+      <Text fill="#b5b5b5" layoutX="511.0" layoutY="250.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Вам понадобятся:" wrappingWidth="142.0">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Text>
+      <Slider fx:id="slide1" blockIncrement="10000.0" layoutX="189.0" layoutY="224.0" majorTickUnit="50000.0" max="1000000.0" minorTickCount="1000" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" value="100000.0" />
+      <TextField fx:id="mytextField" alignment="TOP_RIGHT" layoutX="179.0" layoutY="181.0" onKeyPressed="#handlekeyPressed" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #888888;" text="500000">
+         <font>
+            <Font name="Comic Sans MS Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <Text fill="#b5b5b5" layoutX="211.0" layoutY="84.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Расчитайте параметры кредита" wrappingWidth="491.8564453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="24.0" />
+         </font>
+      </Text>
+      <Button fx:id="credit_btn" layoutX="590.0" layoutY="317.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="162.0" style="-fx-text-fill: #808080; -fx-background-color: transparent;" text="Оформить" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Bold" size="24.0" />
+         </font>
+      </Button>
+      <Slider fx:id="slide2" blockIncrement="10000.0" layoutX="189.0" layoutY="326.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" />
+      <Text fill="#b5b5b5" layoutX="186.0" layoutY="177.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Какая сумма вас интересует?" wrappingWidth="269.8564453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Text>
+      <Text fill="#b5b5b5" layoutX="189.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="На сколько лет?" wrappingWidth="240.8564453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="18.0" />
+         </font>
+      </Text>
+      <TextField fx:id="mytextField1" alignment="TOP_LEFT" editable="false" layoutX="511.0" layoutY="191.0" onKeyPressed="#handlekeyPressed" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #888888;" text="0">
+         <font>
+            <Font name="Comic Sans MS Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <Text fill="#b5b5b5" layoutX="511.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ежемесячный платёж" wrappingWidth="240.8564453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="mytextField2" alignment="TOP_LEFT" editable="false" layoutX="703.0" layoutY="191.0" onKeyPressed="#handlekeyPressed" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #888888;" text="5%">
+         <font>
+            <Font name="Comic Sans MS Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+      <Text fill="#b5b5b5" layoutX="703.0" layoutY="187.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Процентная ставка" wrappingWidth="185.8564453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font>
+      </Text>
+      <Text fill="#b5b5b5" layoutX="511.0" layoutY="274.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Паспорт рф" wrappingWidth="142.0">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Text>
+      <Text fill="#b5b5b5" layoutX="511.0" layoutY="302.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Номер СНИЛС" wrappingWidth="142.0">
+         <font>
+            <Font name="Comic Sans MS Bold" size="12.0" />
+         </font>
+      </Text>
+      <TextField fx:id="mytextField_age" alignment="TOP_RIGHT" layoutX="189.0" layoutY="303.0" onKeyPressed="#handlekeyPressed2" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #888888;" text="0">
+         <font>
+            <Font name="Comic Sans MS Bold" size="19.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
+   </children>
+</AnchorPane>
