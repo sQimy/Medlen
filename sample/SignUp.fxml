@@ -12,16 +12,16 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: #282a34;" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
     <children>
-      <TextField fx:id="SignUpName" layoutX="244.0" layoutY="160.0" prefHeight="40.0" prefWidth="433.0" promptText="Имя (макс.20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-      <TextField fx:id="SignUpLastName" layoutX="244.0" layoutY="216.0" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="433.0" promptText="Фамилия (макс. 30)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-      <TextField fx:id="SignUpAdress" layoutX="244.0" layoutY="271.0" prefHeight="40.0" prefWidth="433.0" promptText="E-Mail (макс. 45)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-      <TextField fx:id="SignUpTele" layoutX="241.0" layoutY="334.0" prefHeight="40.0" prefWidth="433.0" promptText="Телефон (без +7 макс. 10)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-        <TextField fx:id="SignUpLogin" layoutX="144.0" layoutY="403.0" prefHeight="40.0" prefWidth="276.0" promptText="Логин (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-        <TextField fx:id="SignUpPassword" layoutX="522.0" layoutY="403.0" prefHeight="40.0" prefWidth="276.0" promptText="Пароль (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-        <Button fx:id="SignUpReg" layoutX="355.0" layoutY="478.0" mnemonicParsing="false" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="195.0" style="-fx-background-color: #39b8b8; -fx-background-radius: 50;" text="Зарегистрироваться" textFill="WHITE">
+        <Button fx:id="SignUpReg" layoutX="355.0" layoutY="478.0" mnemonicParsing="false" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="195.0" style="-fx-background-color: #39b8b8; -fx-background-radius: 50;" text="Зарегестрироваться" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font></Button>
+        <TextField fx:id="SignUpPassword" layoutX="522.0" layoutY="403.0" onMouseClicked="#SignUpPassClicked" prefHeight="40.0" prefWidth="276.0" promptText="Пароль (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+        <TextField fx:id="SignUpLogin" layoutX="144.0" layoutY="403.0" onMouseClicked="#SignUpLoginClicked" prefHeight="40.0" prefWidth="276.0" promptText="Логин (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpName" layoutX="244.0" layoutY="160.0" onMouseClicked="#SignUpNameClicked" prefHeight="40.0"  prefWidth="433.0" promptText="Имя (макс.20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpLastName" layoutX="244.0" layoutY="216.0" onMouseClicked="#SignUpLastNameClicked" onAction="#RegistrationBtn"  prefHeight="40.0" prefWidth="433.0" promptText="Фамилия (макс. 30)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpTele" layoutX="241.0" layoutY="334.0" onMouseClicked="#SignUpPhoneClicked" prefHeight="40.0" prefWidth="433.0" promptText="Телефон (без +7 макс. 10)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpAdress" layoutX="244.0" layoutY="271.0" onMouseClicked="#SignUpAdresClicked" prefHeight="40.0" prefWidth="433.0" promptText="E-Mail (макс. 45)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
       <Text fx:id="ErrorName" fill="#f44949ed" layoutX="574.0" layoutY="184.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверное имя" wrappingWidth="92.13671875">
          <font>
             <Font name="Informal Roman" size="14.0" />
@@ -116,14 +116,10 @@
             <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
          </effect>
       </ImageView>
-      <Button fx:id="ButBack" layoutX="35.0" layoutY="30.0" mnemonicParsing="false" onAction="#GoToSignIn" prefHeight="53.0" prefWidth="48.0" style="-fx-background-color: #444654;" />
-      <ImageView disable="true" fitHeight="60.0" fitWidth="33.0" layoutX="47.0" layoutY="40.0" pickOnBounds="true" preserveRatio="true">
-         <image>
-            <Image url="@../assets/Icons/149086-essential-set/png/exit.png" />
-         </image>
-         <effect>
-            <ColorAdjust brightness="1.0" />
-         </effect>
-      </ImageView>
+      <Text fx:id="ErrorPassword1" fill="#f44949cc" layoutX="663.0" layoutY="409.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверный пароль" wrappingWidth="119.00000232458115">
+         <font>
+            <Font name="Chiller" size="14.0" />
+         </font>
+      </Text>
     </children>
 </AnchorPane>

@@ -26,6 +26,9 @@ public class SignInController {
     private Button SignInReg;
 
     @FXML
+    private Button SignIntest;
+
+    @FXML
     private Button SignInBtn;
 
     @FXML
@@ -33,6 +36,20 @@ public class SignInController {
 
     @FXML
     private TextField SignInLogin;
+
+    @FXML
+    void SignInLogClicked(MouseEvent event) {
+        SignInLogin.setStyle("-fx-background-color: #3a3c4978;-fx-text-fill: #c7fcec;");
+        SignInPassword.setStyle("-fx-background-color: #3a3c49;-fx-text-fill: #c7fcec;");
+    }
+
+    @FXML
+    void SigInPassClick(MouseEvent event) {
+        SignInPassword.setStyle("-fx-background-color: #3a3c4978; -fx-text-fill: #c7fcec;");
+        SignInLogin.setStyle("-fx-background-color: #3a3c49;-fx-text-fill: #c7fcec;");
+    }
+
+
 
     @FXML
     void Reg(ActionEvent event) throws IOException {

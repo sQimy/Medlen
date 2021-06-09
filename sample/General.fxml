@@ -10,9 +10,12 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: #282a34;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GeneralController">
    <children>
-      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="179.0" style="-fx-background-color: #2E2E2E;">
+      <AnchorPane layoutX="179.0" layoutY="-1.0" prefHeight="591.0" prefWidth="728.0" style="-fx-background-color: white;" />
+      <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="186.0" style="-fx-background-color: #2E2E2E;">
          <children>
-            <Button fx:id="settingsbtn" layoutX="15.0" layoutY="525.0" mnemonicParsing="false" onAction="#setting" opacity="0.0" prefHeight="30.0" prefWidth="30.0" />
+            <Button fx:id="SettingsBtn" layoutX="15.0" layoutY="525.0" mnemonicParsing="false" onAction="#SettingsAction" opacity="0.0" prefHeight="30.0" prefWidth="30.0" />
+            <Button layoutX="62.0" layoutY="513.0" mnemonicParsing="false" opacity="0.0" prefHeight="55.0" prefWidth="55.0" textFill="#000000e8" />
+            <Button fx:id="supbtn" layoutX="135.0" layoutY="525.0" mnemonicParsing="false" onAction="#sup" opacity="0.0" prefHeight="30.0" prefWidth="30.0" />
             <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="15.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
             <image>
                   <Image url="@../assets/Icons/149086-essential-set/png/settings-4.png" />
@@ -21,18 +24,17 @@
                <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
             </effect>
          </ImageView>
-            <Button fx:id="supbtn" layoutX="135.0" layoutY="525.0" mnemonicParsing="false" onAction="#sup" opacity="0.0" prefHeight="30.0" prefWidth="30.0" />
-            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="135.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="62.0" layoutY="513.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/Icons/149086-essential-set/png/mail.png" />
+                  <Image url="@../assets/Icons/149086-essential-set/png/user-3.png" />
                </image>
                <effect>
                   <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
                </effect>
             </ImageView>
-            <ImageView fitHeight="55.0" fitWidth="55.0" layoutX="62.0" layoutY="513.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="135.0" layoutY="525.0" pickOnBounds="true" preserveRatio="true">
                <image>
-                  <Image url="@../assets/Icons/149086-essential-set/png/user-3.png" />
+                  <Image url="@../assets/Icons/149086-essential-set/png/mail.png" />
                </image>
                <effect>
                   <ColorAdjust brightness="0.86" contrast="1.0" hue="1.0" />
@@ -50,17 +52,17 @@
             </Text>
             <AnchorPane layoutX="2.0" layoutY="85.0" prefHeight="418.0" prefWidth="179.0" style="-fx-background-color: #292929;">
                <children>
-                  <Button layoutY="10.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="179.0" style="-fx-background-color: #2E2E2E;" text="Кредитная история" textFill="WHITE">
+                  <Button fx:id="CredHistoryBtn" layoutY="10.0" mnemonicParsing="false" onAction="#CredHistoryAction" prefHeight="55.0" prefWidth="179.0" style="-fx-background-color: #2E2E2E;" text="Кредитная история" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutY="75.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="179.0" style="-fx-background-color: #2E2E2E;" text="Кушац" textFill="WHITE">
+                  <Button fx:id="InsuranceBtn" layoutY="75.0" mnemonicParsing="false" onAction="#TakeInsurance" prefHeight="55.0" prefWidth="179.0" style="-fx-background-color: #2E2E2E;" text="Взять страховку" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>
                   </Button>
-                  <Button layoutY="140.0" mnemonicParsing="false" prefHeight="55.0" prefWidth="179.0" style="-fx-background-color: #2E2E2E;" text="Взять кредит" textFill="WHITE">
+                  <Button layoutY="140.0" mnemonicParsing="false" onAction="#TakeCreditAction" prefHeight="55.0" prefWidth="179.0" style="-fx-background-color: #2E2E2E;" text="Взять кредит" textFill="WHITE">
                      <font>
                         <Font size="17.0" />
                      </font>
