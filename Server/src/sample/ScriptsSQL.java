@@ -12,14 +12,12 @@ public class ScriptsSQL {
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)) {
                 Statement statement = conn.createStatement();
-                statement.executeUpdate("insert into users values ("+ID+",'"+last_name+"','"+first_name+"','"+telephone+"','"+addres+"',"+rating+")");
-                statement.executeUpdate("insert into regaut values ("+"'"+username1+"','"+passwordS+"',"+ID+")");
-                System.out.println("Connection to Store DB succesfull!");
+                statement.executeUpdate("insert into users values ("+ID+",'"+last_name+"','"+first_name+"','"+telephone+"','"+addres+"',"+rating+",'"+username1+"','"+passwordS+"')");
+                System.out.println("Зарегал в бд");
             }
         } catch (Exception ex) {
-            System.out.println("Connection failed SignUp...");
+            System.out.println("Не зарегал в бд");
 
-            System.out.println(ex);
         }
     }
 
@@ -32,18 +30,15 @@ public class ScriptsSQL {
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)) {
                 Statement statement = conn.createStatement();
-                ResultSet resultSet = statement.executeQuery("select max(users_ID) from regaut");
+                ResultSet resultSet = statement.executeQuery("select max(ID) from users");
                 while (resultSet.next()) {
                     int ID = resultSet.getInt(1);
-                    System.out.printf("%s\n ", ID);
+                    System.out.println("Выдал максимальный айдишник");
                     return ID;
                 }
-                System.out.println("Connection to Store DB succesfull!");
             }
         } catch (Exception ex) {
-            System.out.println("Connection failed узнать ID...");
-
-            System.out.println(ex);
+            System.out.println("Не выдал максимальный айдишник");
         }
         return 0;
     }
@@ -56,15 +51,15 @@ public class ScriptsSQL {
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)) {
                 Statement statement = conn.createStatement();
-                ResultSet resultSet = statement.executeQuery("select username from regaut where username="+"'"+t+"'");
+                ResultSet resultSet = statement.executeQuery("select username from users where username='"+t+"'");
                 while (resultSet.next()) {
                     String user = resultSet.getString(1);
                     return 1;
                 }
-                System.out.println("Connection to Store DB succesfull!");
+                System.out.println("Проверил удачно на логин");
             }
         } catch (Exception ex) {
-            System.out.println("Connection failed узнать Username...");
+            System.out.println("Такого логина нет");
 
             System.out.println(ex);
         }
@@ -79,17 +74,16 @@ public class ScriptsSQL {
             Class.forName("com.mysql.cj.jdbc.Driver").getDeclaredConstructor().newInstance();
             try (Connection conn = DriverManager.getConnection(url, username, password)) {
                 Statement statement = conn.createStatement();
-                ResultSet resultSet = statement.executeQuery("select password from regaut where username="+"'"+log+"'");
+                ResultSet resultSet = statement.executeQuery("select password from users where username='"+log+"'");
                 while (resultSet.next()) {
                     String newpas = resultSet.getString(1);
                     return newpas;
                 }
-                System.out.println("Connection to Store DB succesfull!");
+                System.out.println("Проверил удачно пароль");
             }
         } catch (Exception ex) {
-            System.out.println("Connection failed узнать Username...");
+            System.out.println("Пароль не верный");
 
-            System.out.println(ex);
         }
         return "Что то пошло не так на проверке пароля";
     }

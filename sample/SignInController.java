@@ -50,7 +50,6 @@ public class SignInController {
     }
 
 
-
     @FXML
     void Reg(ActionEvent event) throws IOException {
 
@@ -60,7 +59,7 @@ public class SignInController {
         Parent root = (Parent) loader.load();
         stage = new Stage();
         stage.setTitle("Bank System");
-        stage.setScene(new Scene(root,906,591));
+        stage.setScene(new Scene(root, 906, 591));
         stage.setResizable(false);
         stage.show();
 
@@ -70,12 +69,14 @@ public class SignInController {
     void Vhod(ActionEvent event) throws IOException {
         String login = SignInLogin.getText();
         String password = SignInPassword.getText();
-        int checklog = ScriptsSQL.uznatUsername(login);
-        if (checklog==1) {
-            String checkpas = ScriptsSQL.uznatPassword(login);
-            System.out.println("Проверка логина " + checklog);
-            System.out.println("Пароль " + checkpas + " от логина " + login);
-            if (password.equals(checkpas)) {
+        Connect.otpravit("2");
+        Connect.otpravit(login);
+        Connect.otpravit(password);
+        int log = Connect.poluchit();
+        String parol = Connect.poluchitStr();
+        int checklogin = 1;
+        if(checklogin == log ){
+            if (password.equals(parol)) {
 
                 Stage stage = (Stage) SignInBtn.getScene().getWindow();
                 stage.close();
@@ -83,18 +84,10 @@ public class SignInController {
                 Parent root = (Parent) loader.load();
                 stage = new Stage();
                 stage.setTitle("Bank System");
-                stage.setScene(new Scene(root,906,591));
+                stage.setScene(new Scene(root, 906, 591));
                 stage.setResizable(false);
                 stage.show();
-
-            } else
-                    System.out.println("Неверный пароль");
-        } else System.out.println("Такого логина не существует");
-    }
-
-
-    @FXML
-    void initialize() {
-
+            } else {System.out.println("Неверный пароль");}
+        }else {System.out.println("Логин не существует");}
     }
 }

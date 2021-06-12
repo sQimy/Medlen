@@ -3,7 +3,9 @@ package sample;
 import javafx.event.ActionEvent;
 
 import java.awt.*;
+import java.io.FileOutputStream;
 import java.io.IOException;
+import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -117,59 +119,70 @@ public class SignUpController {
     @FXML
     void RegistrationBtn(ActionEvent event) throws IOException {
         SignUpName.setStyle("-fx-text-inner-color: red;");
-        String usernameS = SignUpLogin.getText();
-        String passwordS = SignUpPassword.getText();
-        String last_name = SignUpLastName.getText();
-        String first_name = SignUpName.getText();
-        String telephone = SignUpTele.getText();
-        String addres = SignUpAdress.getText();
-        int count = 0;
-        boolean check = isInteger(telephone,count);
-        int checkUser=ScriptsSQL.uznatUsername(usernameS);
-        if((usernameS != "" && passwordS != "" && last_name != "" && first_name != "" && telephone != "" && addres != "")
-                && (usernameS.length()<=20 && passwordS.length()<=20 && last_name.length()<=30 && first_name.length()<=20 && addres.length()<=45 &&
-                telephone.length() == 10) && check == true && checkUser == 0)
-        {
-            int ID = ScriptsSQL.uznatID();
-            ScriptsSQL.SignUp(ID + 1, last_name, first_name, telephone, addres, 0, usernameS, passwordS);
-
-            Stage stage = (Stage) SignUpReg.getScene().getWindow();
-            stage.close();
-            FXMLLoader loader = new FXMLLoader(getClass().getResource("SignIn.fxml"));
-            Parent root = (Parent) loader.load();
-            stage = new Stage();
-            stage.setTitle("Bank System");
-            stage.setScene(new Scene(root,532,363));
-            stage.setResizable(false);
-            stage.show();
-        } else {
-            if (usernameS == "" || usernameS.length()>20){
-                ErrorLogin.setOpacity(1);
+            ErrorLogin.setOpacity(0);
+            ErrorFakeLogin.setOpacity(0);
+            ErrorPassword.setOpacity(0);
+            ErrorLastname.setOpacity(0);
+            ErrorAddres.setOpacity(0);
+            ErrorTelephone.setOpacity(0);
+            ErrorName.setOpacity(0);
+            String usernameS = SignUpLogin.getText();
+            String passwordS = SignUpPassword.getText();
+            String last_name = SignUpLastName.getText();
+            String first_name = SignUpName.getText();
+            String telephone = SignUpTele.getText();
+            String addres = SignUpAdress.getText();
+            Connect.otpravit("1");
+            Connect.otpravit(usernameS);
+            Connect.otpravit(passwordS);
+            Connect.otpravit(last_name);
+            Connect.otpravit(first_name);
+            Connect.otpravit(telephone);
+            Connect.otpravit(addres);
+            int count = 0;
+            boolean check = isInteger(telephone, count);
+            int checkUser = Connect.poluchit();
+            if ((usernameS != "" && passwordS != "" && last_name != "" && first_name != "" && telephone != "" && addres != "")
+                    && (usernameS.length() <= 20 && passwordS.length() <= 20 && last_name.length() <= 30 && first_name.length() <= 20 && addres.length() <= 45 &&
+                    telephone.length() == 10) && check == true && checkUser == 0)
+            {
+                Connect.otpravit("Go");
+                Stage stage = (Stage) SignUpReg.getScene().getWindow();
+                stage.close();
+                FXMLLoader loader = new FXMLLoader(getClass().getResource("SignIn.fxml"));
+                Parent root = (Parent) loader.load();
+                stage = new Stage();
+                stage.setTitle("Bank System");
+                stage.setScene(new Scene(root,532,363));
+                stage.setResizable(false);
+                stage.show();
+            } else{
+                Connect.otpravit("No");
+                if (usernameS == "" || usernameS.length() > 20) {
+                    ErrorLogin.setOpacity(1);
+                }
+                if (checkUser == 1) {
+                    ErrorFakeLogin.setOpacity(1);
+                }
+                if (passwordS == "" || passwordS.length() > 20) {
+                    ErrorPassword.setOpacity(1);
+                }
+                if (last_name == "" || last_name.length() > 30) {
+                    ErrorLastname.setOpacity(1);
+                }
+                if (addres == "" || addres.length() > 45) {
+                    ErrorAddres.setOpacity(1);
+                }
+                if (telephone == "" || telephone.length() != 10 || check == false) {
+                    ErrorTelephone.setOpacity(1);
+                }
+                if (first_name == "" || first_name.length() > 20) {
+                    ErrorName.setOpacity(1);
+                }
             }
-            if (checkUser == 1){
-                ErrorFakeLogin.setOpacity(1);
-            }
-            if (passwordS == "" || passwordS.length()>20){
-                ErrorPassword.setOpacity(1);
-            }
-            if (last_name == "" || last_name.length()>30){
-                ErrorLastname.setOpacity(1);
-            }
-            if (addres == "" || addres.length()>45){
-                ErrorAddres.setOpacity(1);
-            }
-            if (telephone == "" || telephone.length() !=10 || check == false){
-                ErrorTelephone.setOpacity(1);
-            }
-            if (first_name == "" || first_name.length()>20){
-                ErrorName.setOpacity(1);
-            }
-            ColorChange(null);
-            System.out.println("Не все поля заполнены ");
         }
 
 
-    }
     public static boolean isInteger(String str, int f) {
         for (int i = 0; i < str.length(); i++) {
             char c = str.charAt(i);
