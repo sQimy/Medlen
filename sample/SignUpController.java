@@ -21,6 +21,8 @@ import javafx.scene.text.Text;
 
 import java.sql.*;
 
+import static sample.Connect.Pack;
+
 public class SignUpController {
 
     @FXML
@@ -126,25 +128,18 @@ public class SignUpController {
             ErrorAddres.setOpacity(0);
             ErrorTelephone.setOpacity(0);
             ErrorName.setOpacity(0);
-            String usernameS = SignUpLogin.getText();
-            String passwordS = SignUpPassword.getText();
-            String last_name = SignUpLastName.getText();
-            String first_name = SignUpName.getText();
-            String telephone = SignUpTele.getText();
-            String addres = SignUpAdress.getText();
-            Connect.otpravit("1");
-            Connect.otpravit(usernameS);
-            Connect.otpravit(passwordS);
-            Connect.otpravit(last_name);
-            Connect.otpravit(first_name);
-            Connect.otpravit(telephone);
-            Connect.otpravit(addres);
+
+
+            User NewUser = new User("1",SignUpName.getText(),SignUpLogin.getText(),SignUpPassword.getText(),SignUpLastName.getText(),SignUpName.getText(),SignUpTele.getText(),SignUpAdress.getText(),"0");
+
+            Pack(NewUser);
+
             int count = 0;
-            boolean check = isInteger(telephone, count);
+            boolean check = isInteger(NewUser.Telephone(), count);
             int checkUser = Connect.poluchit();
-            if ((usernameS != "" && passwordS != "" && last_name != "" && first_name != "" && telephone != "" && addres != "")
-                    && (usernameS.length() <= 20 && passwordS.length() <= 20 && last_name.length() <= 30 && first_name.length() <= 20 && addres.length() <= 45 &&
-                    telephone.length() == 10) && check == true && checkUser == 0)
+            if ((NewUser.usernameS != "" && NewUser.passwordS != "" && NewUser.last_name != "" && NewUser.first_name != "" && NewUser.telephone != "" && NewUser.addres != "")
+                    && (NewUser.usernameS.length() <= 20 && NewUser.passwordS().length() <= 20 && NewUser.last_name.length() <= 30 && NewUser.first_name.length() <= 20 && NewUser.addres.length() <= 45 &&
+                    NewUser.telephone.length() == 10) && check == true && checkUser == 0)
             {
                 Connect.otpravit("Go");
                 Stage stage = (Stage) SignUpReg.getScene().getWindow();
@@ -158,25 +153,25 @@ public class SignUpController {
                 stage.show();
             } else{
                 Connect.otpravit("No");
-                if (usernameS == "" || usernameS.length() > 20) {
+                if (NewUser.usernameS == "" || NewUser.usernameS.length() > 20) {
                     ErrorLogin.setOpacity(1);
                 }
                 if (checkUser == 1) {
                     ErrorFakeLogin.setOpacity(1);
                 }
-                if (passwordS == "" || passwordS.length() > 20) {
+                if (NewUser.passwordS == "" || NewUser.passwordS.length() > 20) {
                     ErrorPassword.setOpacity(1);
                 }
-                if (last_name == "" || last_name.length() > 30) {
+                if (NewUser.last_name == "" || NewUser.last_name.length() > 30) {
                     ErrorLastname.setOpacity(1);
                 }
-                if (addres == "" || addres.length() > 45) {
+                if (NewUser.addres == "" || NewUser.addres.length() > 45) {
                     ErrorAddres.setOpacity(1);
                 }
-                if (telephone == "" || telephone.length() != 10 || check == false) {
+                if (NewUser.telephone == "" || NewUser.telephone.length() != 10 || check == false) {
                     ErrorTelephone.setOpacity(1);
                 }
-                if (first_name == "" || first_name.length() > 20) {
+                if (NewUser.first_name == "" || NewUser.first_name.length() > 20) {
                     ErrorName.setOpacity(1);
                 }
             }

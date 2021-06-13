@@ -14,6 +14,8 @@ import javafx.scene.input.MouseEvent;
 import javafx.stage.Modality;
 import javafx.stage.Stage;
 
+import static sample.Connect.Pack;
+
 public class SignInController {
 
     @FXML
@@ -67,16 +69,17 @@ public class SignInController {
 
     @FXML
     void Vhod(ActionEvent event) throws IOException {
-        String login = SignInLogin.getText();
-        String password = SignInPassword.getText();
-        Connect.otpravit("2");
-        Connect.otpravit(login);
-        Connect.otpravit(password);
+
+        User NewUser = new User("2","Null",SignInLogin.getText(),SignInPassword.getText(),"Null","Null","Null","Null","0");
+
+        Pack(NewUser);
+
+
         int log = Connect.poluchit();
         String parol = Connect.poluchitStr();
         int checklogin = 1;
         if(checklogin == log ){
-            if (password.equals(parol)) {
+            if (NewUser.passwordS.equals(parol)) {
 
                 Stage stage = (Stage) SignInBtn.getScene().getWindow();
                 stage.close();

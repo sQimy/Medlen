@@ -1,9 +1,6 @@
 package sample;
 
-import java.io.Console;
-import java.io.DataInputStream;
-import java.io.DataOutputStream;
-import java.io.IOException;
+import java.io.*;
 import java.net.Socket;
 
 public class Connect {
@@ -22,8 +19,14 @@ public class Connect {
             return socket;
 
     }
+
+    public static void otpravit(String date) throws IOException {
+        Socket s = SocketConnect();
+        DataOutputStream output = new DataOutputStream(s.getOutputStream());
+        output.writeUTF(date);
+    }
     public static int poluchit() throws IOException {
-    Socket s = SocketConnect();
+        Socket s = SocketConnect();
         DataInputStream input = new DataInputStream(s.getInputStream());
         int date = input.readInt();
         return date;
@@ -36,9 +39,14 @@ public class Connect {
         return date;
     }
 
-    public static void otpravit(String date) throws IOException {
-    Socket s = SocketConnect();
-        DataOutputStream output = new DataOutputStream(s.getOutputStream());
-        output.writeUTF(date);
+    public static User Pack(User pack) throws  IOException{
+        ObjectOutputStream objOutputStream = null;
+        Socket s = SocketConnect();
+        objOutputStream = new ObjectOutputStream(socket.getOutputStream());
+        objOutputStream.writeObject(pack);
+        DataInputStream input = new DataInputStream(s.getInputStream());
+        return pack;
     }
+
+
     }
