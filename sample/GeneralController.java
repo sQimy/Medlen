@@ -115,7 +115,7 @@ public class GeneralController {
         Parent root = (Parent) loader.load();
         stage = new Stage();
         stage.setTitle("Bank System");
-        stage.setScene(new Scene(root,906,540));
+        stage.setScene(new Scene(root,728,539));
         stage.setResizable(false);
         stage.show();
     }

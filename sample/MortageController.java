@@ -33,10 +33,11 @@ public class MortageController {
     private TextField mytextField;
 
     @FXML
-    private Button credit_btn;
+    private Button mortgage_btn;
 
     @FXML
     private Button back;
+
 
     @FXML
     private Slider slide2;
@@ -63,6 +64,10 @@ public class MortageController {
         stage.setResizable(false);
         stage.show();
 
+    }
+
+    @FXML
+    void Get(ActionEvent event) throws IOException {
     }
     @FXML
     public void handlekeyPressed(KeyEvent KE) {

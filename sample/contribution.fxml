@@ -36,11 +36,6 @@
             <Font name="Comic Sans MS Bold" size="24.0" />
          </font>
       </Text>
-      <Button fx:id="credit_btn" layoutX="472.0" layoutY="432.0" mnemonicParsing="false" opacity="0.0" prefHeight="33.0" prefWidth="206.0" style="-fx-text-fill: #ffffff;" textAlignment="CENTER">
-         <font>
-            <Font name="Comic Sans MS Bold" size="24.0" />
-         </font>
-      </Button>
       <Slider fx:id="slide2" blockIncrement="0.0" layoutX="24.0" layoutY="328.0" majorTickUnit="5.0" max="20.0" minorTickCount="4" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" />
       <Text fill="#b5b5b5" layoutX="21.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сколько вы хотите вложить?" wrappingWidth="269.8564453125">
          <font>
@@ -98,13 +93,13 @@
       </TextField>
       <ImageView fitHeight="150.0" fitWidth="200.0" layoutX="21.0" layoutY="421.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@images/Back%20button.png" />
+            <Image url="@images/вернуться%20назад.png" />
          </image>
       </ImageView>
       <Button fx:id="back" layoutX="41.0" layoutY="440.0" mnemonicParsing="false" onAction="#Back" opacity="0.0" prefHeight="33.0" prefWidth="206.0" text="BACK" />
       <ImageView fitHeight="85.0" fitWidth="270.0" layoutX="442.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true">
          <image>
-            <Image url="@../assets/No1_3.png" />
+            <Image url="@images/оформить.png" />
          </image>
       </ImageView>
       <Text fill="#b5b5b5" layoutX="346.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Общий доход" wrappingWidth="240.8564453125">
@@ -120,5 +115,10 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
+      <Button fx:id="contribute_btn" layoutX="472.0" layoutY="432.0" mnemonicParsing="false" onAction="#Get" opacity="0.0" prefHeight="33.0" prefWidth="206.0" style="-fx-text-fill: #ffffff;" text="Офорфмить" textAlignment="CENTER">
+         <font>
+            <Font name="Comic Sans MS Bold" size="24.0" />
+         </font>
+      </Button>
    </children>
 </AnchorPane>

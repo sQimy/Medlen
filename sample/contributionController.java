@@ -35,7 +35,7 @@ public class contributionController {
     private TextField mytextField;
 
     @FXML
-    private Button credit_btn;
+    private Button contribute_btn;
 
     @FXML
     private Slider slide2;
@@ -55,6 +55,11 @@ public class contributionController {
 
     @FXML
     private TextField mytextField11;
+
+    @FXML
+    void Get(ActionEvent event) throws IOException {
+
+    }
 
     @FXML
     void Back(ActionEvent event) throws IOException {

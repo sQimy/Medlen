@@ -67,6 +67,11 @@ public class crediteController {
     }
 
     @FXML
+    void Get(ActionEvent event) throws IOException {
+    }
+
+
+    @FXML
     public void handlekeyPressed(KeyEvent KE) {
         if (KE.getCode() == KeyCode.ENTER){
             myRub=Integer.parseInt(mytextField.getText());
