@@ -44,8 +44,24 @@ public class Connect {
         Socket s = SocketConnect();
         objOutputStream = new ObjectOutputStream(socket.getOutputStream());
         objOutputStream.writeObject(pack);
+        return pack;
+    }
+
+    public static Credit_Form Pack2(Credit_Form pack) throws  IOException{
+        ObjectOutputStream objOutputStream = null;
+        Socket s = SocketConnect();
+        objOutputStream = new ObjectOutputStream(socket.getOutputStream());
+        objOutputStream.writeObject(pack);
         DataInputStream input = new DataInputStream(s.getInputStream());
         return pack;
+    }
+
+    public static Drop_Form PackDrop() throws IOException, ClassNotFoundException {
+        ObjectInputStream objInputStream = null;
+        Socket s = SocketConnect();
+        objInputStream = new ObjectInputStream(socket.getInputStream());
+        Drop_Form DropUser = (Drop_Form) objInputStream.readObject();
+        return DropUser;
     }
 
 

@@ -2,10 +2,7 @@ package sample;
 
 import javafx.event.ActionEvent;
 
-import java.awt.*;
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.ObjectOutputStream;
 import java.net.URL;
 import java.util.ResourceBundle;
 import javafx.fxml.FXML;
@@ -15,11 +12,8 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 import javafx.scene.text.Text;
-
-import java.sql.*;
 
 import static sample.Connect.Pack;
 

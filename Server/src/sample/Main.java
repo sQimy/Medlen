@@ -12,6 +12,7 @@ public class Main extends Thread {
 
     public Main(Socket socket) {
         this.socket = socket;
+
     }
 
 
@@ -27,36 +28,53 @@ public class Main extends Thread {
         try {
             clientinp = new DataInputStream(socket.getInputStream());
             clientout = new DataOutputStream(socket.getOutputStream());
+            ObjectInputStream objInputStream = null;
+            ObjectOutputStream objOutputStream = null;
             System.out.println("Local host is working on " + SERVER_PORT);
             while (true) {
-                System.out.println("\nСчитываю...");
-                String sentence = clientinp.readUTF();
-                System.out.println("Прочитал: " + sentence);
 
-                switch (sentence){
+                System.out.println("\nСчитываю...");
+                objInputStream = new ObjectInputStream(socket.getInputStream());
+                User user = (User) objInputStream.readObject();
+                System.out.println(user.code());
+                System.out.println("Прочитал: " + user.usernameS);
+
+                switch (user.code()){
                     case ("1"):
-                        String user = clientinp.readUTF();
-                        String password = clientinp.readUTF();
-                        String last_name = clientinp.readUTF();
-                        String first_name = clientinp.readUTF();
-                        String telephone = clientinp.readUTF();
-                        String addres = clientinp.readUTF();
-                        System.out.println("Прочитал: " + user+" " + password +" "+ last_name +" "+ first_name +" "+ telephone +" "+ addres);
-                        int checkUser=ScriptsSQL.uznatUsername(user);
+                        System.out.println("Прочитал: " + user.UsernameS()+" " + user.passwordS+" "+ user.last_name+" "+ user.first_name +" "+ user.telephone +" "+ user.addres);
+                        int checkUser=ScriptsSQL.uznatUsername(user.UsernameS());
                         clientout.writeInt(checkUser);
                         System.out.println("Отправил проверку юзера " + checkUser);
                         String go = "Go";
                         if( go.equals(clientinp.readUTF())) {
-                            SignUp.Registration(user, password, last_name, first_name, telephone, addres);
+                            SignUp.Registration(user.usernameS, user.passwordS, user.last_name, user.first_name, user.telephone, user.addres);
                         }
                         break;
                     case ("2"):
-                        String login = clientinp.readUTF();
-                        String pass = clientinp.readUTF();
-                        int checkLogin=ScriptsSQL.uznatUsername(login);
+                        int checkLogin=ScriptsSQL.uznatUsername(user.UsernameS());
                         clientout.writeInt(checkLogin);
-                        String checkpass=ScriptsSQL.uznatPassword(login);
+                        String checkpass=ScriptsSQL.uznatPassword(user.usernameS);
                         clientout.writeUTF(checkpass);
+                        String f = clientinp.readUTF();
+                        if (f.equals("Yes")){
+                            while(socket.isConnected()) {
+                                System.out.println("Я еще подключен");
+                                int id = ScriptsSQL.uznatidUser(user.UsernameS());
+                                System.out.println("Ваш айди" + id);
+                                String get = clientinp.readUTF();
+                                if (get.equals("1")) {
+                                    objInputStream = new ObjectInputStream(socket.getInputStream());
+                                    Credit_Form userCredit = (Credit_Form) objInputStream.readObject();
+                                    System.out.println(id + " " + userCredit.cost + " " + userCredit.total + " " + userCredit.type);
+                                    ScriptsSQL.addData(id, userCredit.cost, userCredit.total, userCredit.type);
+                                }
+                                if (get.equals("2")){
+                                    Drop_Form UserCredit = ScriptsSQL.dropData(id);
+                                    objOutputStream = new ObjectOutputStream(socket.getOutputStream());
+                                    objOutputStream.writeObject(UserCredit);
+                                }
+                            }
+                        }else{System.out.println("Что ты задумал?");}
                         break;
                 }
 
@@ -64,7 +82,7 @@ public class Main extends Thread {
                 clientout.writeUTF(String.format("Ответ: " + sentence));*/
 
             }
-        } catch (IOException e) {
+        } catch (IOException | ClassNotFoundException e) {
             e.printStackTrace();
         } finally {
             try {

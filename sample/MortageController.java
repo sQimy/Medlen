@@ -18,6 +18,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
+import static sample.Connect.Pack2;
+
 public class MortageController {
     @FXML
     private ResourceBundle resources;
@@ -68,6 +70,19 @@ public class MortageController {
 
     @FXML
     void Get(ActionEvent event) throws IOException {
+        Connect.otpravit("1");
+        int c = 5;
+        Credit_Form UserCredit = new Credit_Form(myRub,myRub+((myRub/100)*(c*age)),"ipoteka");
+        Pack2(UserCredit);
+        Stage stage = (Stage) mortgage_btn.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("General.fxml"));
+        Parent root = (Parent) loader.load();
+        stage = new Stage();
+        stage.setTitle("Bank System");
+        stage.setScene(new Scene(root, 906, 540));
+        stage.setResizable(false);
+        stage.show();
     }
     @FXML
     public void handlekeyPressed(KeyEvent KE) {

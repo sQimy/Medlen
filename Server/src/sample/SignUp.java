@@ -27,19 +27,6 @@ public class SignUp {
 
 
     }
-    public static boolean isInteger(String str, int f) {
-        for (int i = 0; i < str.length(); i++) {
-            char c = str.charAt(i);
-            if (c == '0' || c == '1' || c == '2' || c == '3' || c == '4' || c == '5' || c == '6' || c == '7' || c == '8' || c == '9') {
-                f+=1;
-            }
-        }
-        if (f==str.length()){
-            return true;
-        }  else {
-            return false;
-        }
-    }
 
 
 }

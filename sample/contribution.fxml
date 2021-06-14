@@ -55,7 +55,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <Text fill="#b5b5b5" layoutX="346.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Получаете в месяц" wrappingWidth="240.8564453125">
+      <Text fill="#b5b5b5" layoutX="346.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Получаете в год" wrappingWidth="240.8564453125">
          <font>
             <Font name="Comic Sans MS Bold" size="15.0" />
          </font>
@@ -102,7 +102,7 @@
             <Image url="@images/оформить.png" />
          </image>
       </ImageView>
-      <Text fill="#b5b5b5" layoutX="346.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Общий доход" wrappingWidth="240.8564453125">
+      <Text fill="#b5b5b5" layoutX="346.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Чистый доход" wrappingWidth="240.8564453125">
          <font>
             <Font name="Comic Sans MS Bold" size="15.0" />
          </font>

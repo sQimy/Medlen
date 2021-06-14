@@ -18,6 +18,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
+import static sample.Connect.Pack2;
+
 public class contributionController {
 
     @FXML
@@ -58,7 +60,19 @@ public class contributionController {
 
     @FXML
     void Get(ActionEvent event) throws IOException {
-
+        Connect.otpravit("1");
+        int c = 2;
+        Credit_Form UserCredit = new Credit_Form(myRub,myRub+((myRub/100)*(c*age)),"vznos");
+        Pack2(UserCredit);
+        Stage stage = (Stage) contribute_btn.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("General.fxml"));
+        Parent root = (Parent) loader.load();
+        stage = new Stage();
+        stage.setTitle("Bank System");
+        stage.setScene(new Scene(root, 906, 540));
+        stage.setResizable(false);
+        stage.show();
     }
 
     @FXML

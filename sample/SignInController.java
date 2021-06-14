@@ -11,7 +11,6 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
-import javafx.stage.Modality;
 import javafx.stage.Stage;
 
 import static sample.Connect.Pack;
@@ -80,17 +79,21 @@ public class SignInController {
         int checklogin = 1;
         if(checklogin == log ){
             if (NewUser.passwordS.equals(parol)) {
-
+                Connect.otpravit("Yes");
                 Stage stage = (Stage) SignInBtn.getScene().getWindow();
                 stage.close();
                 FXMLLoader loader = new FXMLLoader(getClass().getResource("General.fxml"));
                 Parent root = (Parent) loader.load();
                 stage = new Stage();
                 stage.setTitle("Bank System");
-                stage.setScene(new Scene(root, 906, 591));
+                stage.setScene(new Scene(root, 906, 540));
                 stage.setResizable(false);
                 stage.show();
-            } else {System.out.println("Неверный пароль");}
-        }else {System.out.println("Логин не существует");}
+            } else {
+                Connect.otpravit("No");
+                System.out.println("Неверный пароль");}
+        }else {
+            Connect.otpravit("No");
+            System.out.println("Логин не существует");}
     }
 }

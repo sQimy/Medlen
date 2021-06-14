@@ -109,6 +109,7 @@ public class GeneralController {
 
     @FXML
     void CredHist(ActionEvent event) throws IOException{
+        Connect.otpravit("2");
         Stage stage = (Stage) credit_history.getScene().getWindow();
         stage.close();
         FXMLLoader loader = new FXMLLoader(getClass().getResource("credit_history.fxml"));
