@@ -8,11 +8,11 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<StackPane fx:id="ParentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GeneralController">
+<StackPane fx:id="ParentContainer" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="540.0" prefWidth="906.0" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.GeneralCont">
    <children>
       <AnchorPane fx:id="container1" prefHeight="540.0" prefWidth="188.0" style="-fx-background-color: #292929;">
          <children>
-            <ImageView fitHeight="61.0" fitWidth="179.0" layoutX="4.0" layoutY="201.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="179.0" layoutX="4.0" layoutY="329.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/Кнопка%20№1%20(2).png" />
                </image>
@@ -22,14 +22,9 @@
                   <Image url="@images/Кнопка%20№1%20(3).png" />
                </image>
             </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="179.0" layoutX="4.0" layoutY="251.0" pickOnBounds="true" preserveRatio="true">
+            <ImageView fitHeight="61.0" fitWidth="179.0" layoutX="4.0" layoutY="240.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/Кнопка%20№1%20(4).png" />
-               </image>
-            </ImageView>
-            <ImageView fitHeight="61.0" fitWidth="179.0" layoutX="4.0" layoutY="301.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@images/Кнопка%20№1%20(5).png" />
                </image>
             </ImageView>
             <Text fill="WHITE" layoutX="32.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Medlen">
@@ -37,26 +32,6 @@
                   <Font name="Comic Sans MS Bold" size="29.0" />
                </font>
             </Text>
-            <Button fx:id="credit_history" layoutY="208.0" mnemonicParsing="false" onAction="#CredHist" opacity="0.0" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #2E2E2E;" text="Кредитная история" textAlignment="JUSTIFY" textFill="WHITE">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
-            <Button fx:id="take_insurance" layoutY="308.0" mnemonicParsing="false" onAction="#Insurance" opacity="0.0" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #2E2E2E;" text="Взять Страховку" textFill="WHITE">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
-            <Button fx:id="take_mortgage" layoutY="258.0" mnemonicParsing="false" onAction="#Mortgage" opacity="0.0" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #2E2E2E;" text="Взять Ипотеку" textFill="WHITE">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
-            <Button fx:id="take_credit" layoutX="10.0" layoutY="158.0" mnemonicParsing="false" onAction="#Credit" opacity="0.0" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #2E2E2E;" text="Взять кредит" textFill="WHITE">
-               <font>
-                  <Font size="17.0" />
-               </font>
-            </Button>
             <ImageView fitHeight="540.0" fitWidth="731.0" layoutX="177.0" pickOnBounds="true" preserveRatio="true">
                <image>
                   <Image url="@images/Frame%201%20(7).png" />
@@ -72,7 +47,32 @@
                   <Image url="@images/Кнопка%20№1%20(3).png" />
                </image>
             </ImageView>
+            <ImageView fitHeight="61.0" fitWidth="186.0" layoutX="4.0" layoutY="197.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@images/No1_4.png" />
+               </image>
+            </ImageView>
+            <Button fx:id="credit_history" layoutX="16.0" layoutY="341.0" mnemonicParsing="false" onAction="#CredHist" opacity="0.0" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #2E2E2E;" text="Кредитная история" textAlignment="JUSTIFY" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="take_mortgage" layoutX="10.0" layoutY="252.0" mnemonicParsing="false" onAction="#Mortgage" opacity="0.0" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #2E2E2E;" text="Взять Ипотеку" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="take_credit" layoutX="10.0" layoutY="158.0" mnemonicParsing="false" onAction="#Credit" opacity="0.0" prefHeight="36.0" prefWidth="148.0" style="-fx-background-color: #2E2E2E;" text="Взять кредит" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
             <Button fx:id="take_credit1" layoutX="229.0" layoutY="302.0" mnemonicParsing="false" onAction="#Credit1" opacity="0.0" prefHeight="55.0" prefWidth="179.0" style="-fx-background-color: #2E2E2E;" text="Взять кредит" textFill="WHITE">
+               <font>
+                  <Font size="17.0" />
+               </font>
+            </Button>
+            <Button fx:id="take_contribution" layoutX="16.0" layoutY="212.0" mnemonicParsing="false" onAction="#Contribution" opacity="0.0" prefHeight="30.0" prefWidth="148.0" style="-fx-background-color: #2E2E2E;" text="Сделать вклад" textFill="WHITE">
                <font>
                   <Font size="17.0" />
                </font>

@@ -91,7 +91,7 @@ public class crediteController {
 
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                int c=5;
+                int c=9;
                 myRub= (int) slide1.getValue();
                 mytextField.setText(Integer.toString(myRub));
                 if (age == 0){
@@ -108,7 +108,7 @@ public class crediteController {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 
-                int c=5;
+                int c=9;
                 age= (int) slide2.getValue();
                 mytextField_age.setText(Integer.toString(age));
                 if (age == 0){

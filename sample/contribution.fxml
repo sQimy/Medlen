@@ -10,19 +10,19 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="728.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.crediteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="728.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.contributionController">
    <children>
       <ImageView fitHeight="546.0" fitWidth="728.0">
          <image>
             <Image url="@images/back.png" />
          </image>
       </ImageView>
-      <Text fill="#b5b5b5" layoutX="346.0" layoutY="252.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Вам понадобятся:" wrappingWidth="142.0">
+      <Text fill="#b5b5b5" layoutX="346.0" layoutY="364.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Вам понадобятся:" wrappingWidth="142.0">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>
       </Text>
-      <Slider fx:id="slide1" blockIncrement="10000.0" layoutX="24.0" layoutY="226.0" majorTickUnit="500000.0" max="1000000.0" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" />
+      <Slider fx:id="slide1" blockIncrement="10000.0" layoutX="24.0" layoutY="226.0" majorTickUnit="500000.0" max="1000000.0" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" value="1000.0" />
       <TextField fx:id="mytextField" alignment="TOP_RIGHT" layoutX="22.0" layoutY="183.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="0">
          <font>
             <Font name="Comic Sans MS Bold" size="22.0" />
@@ -41,13 +41,13 @@
             <Font name="Comic Sans MS Bold" size="24.0" />
          </font>
       </Button>
-      <Slider fx:id="slide2" blockIncrement="10000.0" layoutX="24.0" layoutY="328.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" />
-      <Text fill="#b5b5b5" layoutX="21.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Какая сумма вас интересует?" wrappingWidth="269.8564453125">
+      <Slider fx:id="slide2" blockIncrement="0.0" layoutX="24.0" layoutY="328.0" majorTickUnit="5.0" max="20.0" minorTickCount="4" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" />
+      <Text fill="#b5b5b5" layoutX="21.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Сколько вы хотите вложить?" wrappingWidth="269.8564453125">
          <font>
             <Font name="Comic Sans MS Bold" size="18.0" />
          </font>
       </Text>
-      <Text fill="#b5b5b5" layoutX="24.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="На сколько лет?" wrappingWidth="240.8564453125">
+      <Text fill="#b5b5b5" layoutX="24.0" layoutY="306.0" strokeType="OUTSIDE" strokeWidth="0.0" text="На какой срок?" wrappingWidth="240.8564453125">
          <font>
             <Font name="Comic Sans MS Bold" size="18.0" />
          </font>
@@ -60,12 +60,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <Text fill="#b5b5b5" layoutX="346.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Ежемесячный платёж" wrappingWidth="240.8564453125">
+      <Text fill="#b5b5b5" layoutX="346.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Получаете в месяц" wrappingWidth="240.8564453125">
          <font>
             <Font name="Comic Sans MS Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="mytextField2" alignment="TOP_LEFT" editable="false" layoutX="561.0" layoutY="193.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="9%">
+      <TextField fx:id="mytextField2" alignment="TOP_LEFT" editable="false" layoutX="561.0" layoutY="193.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="2%">
          <font>
             <Font name="Comic Sans MS Bold" size="22.0" />
          </font>
@@ -78,12 +78,12 @@
             <Font name="Comic Sans MS Bold" size="15.0" />
          </font>
       </Text>
-      <Text fill="#b5b5b5" layoutX="346.0" layoutY="276.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Паспорт рф" wrappingWidth="142.0">
+      <Text fill="#b5b5b5" layoutX="346.0" layoutY="388.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Паспорт рф" wrappingWidth="142.0">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>
       </Text>
-      <Text fill="#b5b5b5" layoutX="346.0" layoutY="304.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Номер СНИЛС" wrappingWidth="142.0">
+      <Text fill="#b5b5b5" layoutX="346.0" layoutY="416.0" strokeType="OUTSIDE" strokeWidth="0.0" text="-Номер СНИЛС" wrappingWidth="142.0">
          <font>
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>
@@ -107,5 +107,18 @@
             <Image url="@../assets/No1_3.png" />
          </image>
       </ImageView>
+      <Text fill="#b5b5b5" layoutX="346.0" layoutY="269.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Общий доход" wrappingWidth="240.8564453125">
+         <font>
+            <Font name="Comic Sans MS Bold" size="15.0" />
+         </font>
+      </Text>
+      <TextField fx:id="mytextField11" alignment="TOP_LEFT" editable="false" layoutX="346.0" layoutY="287.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="162.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="0">
+         <font>
+            <Font name="Comic Sans MS Bold" size="22.0" />
+         </font>
+         <cursor>
+            <Cursor fx:constant="HAND" />
+         </cursor>
+      </TextField>
    </children>
 </AnchorPane>

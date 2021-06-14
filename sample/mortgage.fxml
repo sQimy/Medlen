@@ -22,7 +22,7 @@
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>
       </Text>
-      <Slider fx:id="slide1" blockIncrement="10000.0" layoutX="24.0" layoutY="226.0" majorTickUnit="500000.0" max="1000000.0" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" />
+      <Slider fx:id="slide1" blockIncrement="10000.0" layoutX="24.0" layoutY="226.0" majorTickUnit="1000000.0" max="4000000.0" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" />
       <TextField fx:id="mytextField" alignment="TOP_RIGHT" layoutX="22.0" layoutY="183.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="0">
          <font>
             <Font name="Comic Sans MS Bold" size="22.0" />
@@ -41,7 +41,7 @@
             <Font name="Comic Sans MS Bold" size="24.0" />
          </font>
       </Button>
-      <Slider fx:id="slide2" blockIncrement="10000.0" layoutX="24.0" layoutY="328.0" majorTickUnit="1.0" max="10.0" minorTickCount="0" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" />
+      <Slider fx:id="slide2" blockIncrement="10000.0" layoutX="24.0" layoutY="328.0" majorTickUnit="5.0" max="20.0" minorTickCount="4" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" />
       <Text fill="#b5b5b5" layoutX="21.0" layoutY="179.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Какая сумма вас интересует?" wrappingWidth="269.8564453125">
          <font>
             <Font name="Comic Sans MS Bold" size="18.0" />
@@ -65,7 +65,7 @@
             <Font name="Comic Sans MS Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="mytextField2" alignment="TOP_LEFT" editable="false" layoutX="561.0" layoutY="193.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="9%">
+      <TextField fx:id="mytextField2" alignment="TOP_LEFT" editable="false" layoutX="561.0" layoutY="193.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="5%">
          <font>
             <Font name="Comic Sans MS Bold" size="22.0" />
          </font>

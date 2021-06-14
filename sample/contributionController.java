@@ -18,7 +18,8 @@ import javafx.scene.input.KeyCode;
 import javafx.scene.input.KeyEvent;
 import javafx.stage.Stage;
 
-public class MortageController {
+public class contributionController {
+
     @FXML
     private ResourceBundle resources;
 
@@ -29,14 +30,12 @@ public class MortageController {
     private Slider slide1;
     int myRub;
 
+
     @FXML
     private TextField mytextField;
 
     @FXML
     private Button credit_btn;
-
-    @FXML
-    private Button back;
 
     @FXML
     private Slider slide2;
@@ -52,6 +51,12 @@ public class MortageController {
     private TextField mytextField_age;
 
     @FXML
+    private Button back;
+
+    @FXML
+    private TextField mytextField11;
+
+    @FXML
     void Back(ActionEvent event) throws IOException {
         Stage stage = (Stage) back.getScene().getWindow();
         stage.close();
@@ -64,6 +69,7 @@ public class MortageController {
         stage.show();
 
     }
+
     @FXML
     public void handlekeyPressed(KeyEvent KE) {
         if (KE.getCode() == KeyCode.ENTER){
@@ -81,21 +87,24 @@ public class MortageController {
         }
     }
 
-
     @FXML
     void initialize() {
+
+
         slide1.valueProperty().addListener(new ChangeListener<Number>() {
 
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                int c=5;
+                int c=2;
                 myRub= (int) slide1.getValue();
                 mytextField.setText(Integer.toString(myRub));
                 if (age == 0){
                     mytextField1.setText(Integer.toString(0));
+                    mytextField11.setText(Integer.toString(0));
                 }
                 else {
-                    mytextField1.setText(Integer.toString((int) (myRub+((myRub/100)*(c*age)))/(12*age)));
+                    mytextField1.setText(Integer.toString((int) (myRub/100*c)));
+                    mytextField11.setText(Integer.toString((int) (myRub/100*c)*age));
                 }
             }
         });
@@ -104,21 +113,23 @@ public class MortageController {
 
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-                int c=5;
+
+                int c=2;
                 age= (int) slide2.getValue();
                 mytextField_age.setText(Integer.toString(age));
                 if (age == 0){
                     mytextField1.setText(Integer.toString(0));
+                    mytextField11.setText(Integer.toString(0));
                 }
                 else {
-                    mytextField1.setText(Integer.toString((int) (myRub+((myRub/100)*(c*age)))/(12*age)));
+                    mytextField1.setText(Integer.toString((int) (myRub/100*c)));
+                    mytextField11.setText(Integer.toString((int) (myRub/100*c)*age));
                 }
 
 
             }
         });
 
+
     }
 }
-
-
