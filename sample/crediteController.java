@@ -91,14 +91,14 @@ public class crediteController {
 
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
-
+                int c=5;
                 myRub= (int) slide1.getValue();
                 mytextField.setText(Integer.toString(myRub));
                 if (age == 0){
                     mytextField1.setText(Integer.toString(0));
                 }
                 else {
-                    mytextField1.setText(Integer.toString((int) (myRub*1.05/age/12)));
+                    mytextField1.setText(Integer.toString((int) (myRub+((myRub/100)*(c*age)))/(12*age)));
                 }
             }
         });
@@ -108,13 +108,14 @@ public class crediteController {
             @Override
             public void changed(ObservableValue<? extends Number> observable, Number oldValue, Number newValue) {
 
+                int c=5;
                 age= (int) slide2.getValue();
                 mytextField_age.setText(Integer.toString(age));
                 if (age == 0){
                     mytextField1.setText(Integer.toString(0));
                 }
                 else {
-                    mytextField1.setText(Integer.toString((int) (myRub*1.05/age/12)));
+                    mytextField1.setText(Integer.toString((int) (myRub+((myRub/100)*(c*age)))/(12*age)));
                 }
 
 

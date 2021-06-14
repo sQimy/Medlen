@@ -95,7 +95,7 @@ public class GeneralController {
     void Insurance(ActionEvent event) throws IOException{
         Stage stage = (Stage) take_insurance.getScene().getWindow();
         stage.close();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("take_insurance.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("credite.fxml"));
         Parent root = (Parent) loader.load();
         stage = new Stage();
         stage.setTitle("Bank System");
@@ -108,7 +108,7 @@ public class GeneralController {
     void Mortgage(ActionEvent event) throws IOException{
         Stage stage = (Stage) take_mortgage.getScene().getWindow();
         stage.close();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("take_mortgage.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("credite.fxml"));
         Parent root = (Parent) loader.load();
         stage = new Stage();
         stage.setTitle("Bank System");
@@ -121,7 +121,7 @@ public class GeneralController {
     void CredHist(ActionEvent event) throws IOException{
         Stage stage = (Stage) credit_history.getScene().getWindow();
         stage.close();
-        FXMLLoader loader = new FXMLLoader(getClass().getResource("credit_history.fxml"));
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("credite.fxml"));
         Parent root = (Parent) loader.load();
         stage = new Stage();
         stage.setTitle("Bank System");

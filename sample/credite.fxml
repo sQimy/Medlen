@@ -10,7 +10,7 @@
 <?import javafx.scene.text.Font?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="728.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/16" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.crediteController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="546.0" prefWidth="728.0" style="-fx-background-color: #292929;" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.crediteController">
    <children>
       <ImageView fitHeight="546.0" fitWidth="728.0">
          <image>
@@ -23,7 +23,7 @@
          </font>
       </Text>
       <Slider fx:id="slide1" blockIncrement="10000.0" layoutX="24.0" layoutY="226.0" majorTickUnit="50000.0" max="1000000.0" minorTickCount="1000" prefHeight="73.0" prefWidth="281.0" showTickLabels="true" showTickMarks="true" snapToTicks="true" style="-fx-effect: silver; -fx-background-color: transparent;" value="100000.0" />
-      <TextField fx:id="mytextField" alignment="TOP_RIGHT" layoutX="14.0" layoutY="183.0" onKeyPressed="#handlekeyPressed" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #888888;" text="500000">
+      <TextField fx:id="mytextField" alignment="TOP_RIGHT" layoutX="22.0" layoutY="183.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="500000">
          <font>
             <Font name="Comic Sans MS Bold" size="22.0" />
          </font>
@@ -31,12 +31,12 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <Text fill="#b5b5b5" layoutX="46.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Расчитайте параметры кредита" wrappingWidth="491.8564453125">
+      <Text fill="#b5b5b5" layoutX="46.0" layoutY="86.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Расчитайте параметры " wrappingWidth="491.8564453125">
          <font>
             <Font name="Comic Sans MS Bold" size="24.0" />
          </font>
       </Text>
-      <Button fx:id="credit_btn" layoutX="425.0" layoutY="319.0" mnemonicParsing="false" prefHeight="52.0" prefWidth="162.0" style="-fx-text-fill: #808080; -fx-background-color: transparent;" text="Оформить" textAlignment="CENTER">
+      <Button fx:id="credit_btn" layoutX="472.0" layoutY="432.0" mnemonicParsing="false" opacity="0.0" prefHeight="33.0" prefWidth="206.0" style="-fx-text-fill: #ffffff;" textAlignment="CENTER">
          <font>
             <Font name="Comic Sans MS Bold" size="24.0" />
          </font>
@@ -52,7 +52,7 @@
             <Font name="Comic Sans MS Bold" size="18.0" />
          </font>
       </Text>
-      <TextField fx:id="mytextField1" alignment="TOP_LEFT" editable="false" layoutX="346.0" layoutY="193.0" onKeyPressed="#handlekeyPressed" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #888888;" text="0">
+      <TextField fx:id="mytextField1" alignment="TOP_LEFT" editable="false" layoutX="346.0" layoutY="193.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="162.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="0">
          <font>
             <Font name="Comic Sans MS Bold" size="22.0" />
          </font>
@@ -65,7 +65,7 @@
             <Font name="Comic Sans MS Bold" size="15.0" />
          </font>
       </Text>
-      <TextField fx:id="mytextField2" alignment="TOP_LEFT" editable="false" layoutX="538.0" layoutY="193.0" onKeyPressed="#handlekeyPressed" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #888888;" text="5%">
+      <TextField fx:id="mytextField2" alignment="TOP_LEFT" editable="false" layoutX="561.0" layoutY="193.0" onKeyPressed="#handlekeyPressed" prefHeight="48.0" prefWidth="70.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="5%">
          <font>
             <Font name="Comic Sans MS Bold" size="22.0" />
          </font>
@@ -73,7 +73,7 @@
             <Cursor fx:constant="HAND" />
          </cursor>
       </TextField>
-      <Text fill="#b5b5b5" layoutX="538.0" layoutY="189.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Процентная ставка" wrappingWidth="185.8564453125">
+      <Text fill="#b5b5b5" layoutX="531.0" layoutY="188.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Процентная ставка в год" wrappingWidth="200.00000977516174">
          <font>
             <Font name="Comic Sans MS Bold" size="15.0" />
          </font>
@@ -88,7 +88,7 @@
             <Font name="Comic Sans MS Bold" size="12.0" />
          </font>
       </Text>
-      <TextField fx:id="mytextField_age" alignment="TOP_RIGHT" layoutX="24.0" layoutY="305.0" onKeyPressed="#handlekeyPressed2" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #888888;" text="0">
+      <TextField fx:id="mytextField_age" alignment="TOP_RIGHT" layoutX="24.0" layoutY="305.0" onKeyPressed="#handlekeyPressed2" prefHeight="39.0" prefWidth="142.0" style="-fx-background-color: transparent; -fx-text-fill: #ffffff;" text="0">
          <font>
             <Font name="Comic Sans MS Bold" size="19.0" />
          </font>
@@ -102,5 +102,10 @@
          </image>
       </ImageView>
       <Button fx:id="back" layoutX="41.0" layoutY="440.0" mnemonicParsing="false" onAction="#Back" opacity="0.0" prefHeight="33.0" prefWidth="206.0" text="BACK" />
+      <ImageView fitHeight="85.0" fitWidth="270.0" layoutX="442.0" layoutY="414.0" pickOnBounds="true" preserveRatio="true">
+         <image>
+            <Image url="@../assets/No1_3.png" />
+         </image>
+      </ImageView>
    </children>
 </AnchorPane>
