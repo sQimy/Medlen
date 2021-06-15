@@ -12,16 +12,21 @@
 
 <AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="591.0" prefWidth="906.0" style="-fx-background-color: #282a34;" xmlns="http://javafx.com/javafx/8.0.261" xmlns:fx="http://javafx.com/fxml/1" fx:controller="sample.SignUpController">
     <children>
+      <TextField fx:id="SignUpName" layoutX="244.0" layoutY="160.0" onMouseClicked="#SignUpNameClicked" prefHeight="40.0" prefWidth="433.0" promptText="Имя (макс.20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpLastName" layoutX="244.0" layoutY="216.0" onAction="#RegistrationBtn" onMouseClicked="#SignUpLastNameClicked" prefHeight="40.0" prefWidth="433.0" promptText="Фамилия (макс. 30)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpAdress" layoutX="244.0" layoutY="271.0" onMouseClicked="#SignUpAdresClicked" prefHeight="40.0" prefWidth="433.0" promptText="E-Mail (макс. 45)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <TextField fx:id="SignUpTele" layoutX="241.0" layoutY="334.0" onMouseClicked="#SignUpPhoneClicked" prefHeight="40.0" prefWidth="433.0" promptText="Телефон (без +7 макс. 10)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+        <TextField fx:id="SignUpLogin" layoutX="144.0" layoutY="403.0" onMouseClicked="#SignUpLoginClicked" prefHeight="40.0" prefWidth="276.0" promptText="Логин (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+        <TextField fx:id="SignUpPassword" layoutX="522.0" layoutY="403.0" onMouseClicked="#SignUpPassClicked" prefHeight="40.0" prefWidth="276.0" promptText="Пароль (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
+      <Button fx:id="BackBtn" layoutX="124.0" layoutY="478.0" mnemonicParsing="false" onAction="#goBack" prefHeight="40.0" prefWidth="129.0" style="-fx-background-color: #39b8b8; -fx-background-radius: 50;" text="Назад" textFill="WHITE">
+         <font>
+            <Font size="18.0" />
+         </font>
+      </Button>
         <Button fx:id="SignUpReg" layoutX="355.0" layoutY="478.0" mnemonicParsing="false" onAction="#RegistrationBtn" prefHeight="40.0" prefWidth="195.0" style="-fx-background-color: #39b8b8; -fx-background-radius: 50;" text="Зарегестрироваться" textFill="WHITE">
          <font>
             <Font size="18.0" />
          </font></Button>
-        <TextField fx:id="SignUpPassword" layoutX="522.0" layoutY="403.0" onMouseClicked="#SignUpPassClicked" prefHeight="40.0" prefWidth="276.0" promptText="Пароль (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-        <TextField fx:id="SignUpLogin" layoutX="144.0" layoutY="403.0" onMouseClicked="#SignUpLoginClicked" prefHeight="40.0" prefWidth="276.0" promptText="Логин (макс. 20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-      <TextField fx:id="SignUpName" layoutX="244.0" layoutY="160.0" onMouseClicked="#SignUpNameClicked" prefHeight="40.0"  prefWidth="433.0" promptText="Имя (макс.20)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-      <TextField fx:id="SignUpLastName" layoutX="244.0" layoutY="216.0" onMouseClicked="#SignUpLastNameClicked" onAction="#RegistrationBtn"  prefHeight="40.0" prefWidth="433.0" promptText="Фамилия (макс. 30)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-      <TextField fx:id="SignUpTele" layoutX="241.0" layoutY="334.0" onMouseClicked="#SignUpPhoneClicked" prefHeight="40.0" prefWidth="433.0" promptText="Телефон (без +7 макс. 10)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
-      <TextField fx:id="SignUpAdress" layoutX="244.0" layoutY="271.0" onMouseClicked="#SignUpAdresClicked" prefHeight="40.0" prefWidth="433.0" promptText="E-Mail (макс. 45)" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;" />
       <Text fx:id="ErrorName" fill="#f44949ed" layoutX="574.0" layoutY="184.0" opacity="0.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Неверное имя" wrappingWidth="92.13671875">
          <font>
             <Font name="Informal Roman" size="14.0" />

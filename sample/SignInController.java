@@ -11,6 +11,7 @@ import javafx.scene.Scene;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.input.MouseEvent;
+import javafx.scene.text.Text;
 import javafx.stage.Stage;
 
 import static sample.Connect.Pack;
@@ -37,6 +38,12 @@ public class SignInController {
 
     @FXML
     private TextField SignInLogin;
+
+    @FXML
+    private Text FakeLogin;
+
+    @FXML
+    private Text FakePass;
 
     @FXML
     void SignInLogClicked(MouseEvent event) {
@@ -77,6 +84,8 @@ public class SignInController {
         int log = Connect.poluchit();
         String parol = Connect.poluchitStr();
         int checklogin = 1;
+        FakeLogin.setOpacity(0);
+        FakePass.setOpacity(0);
         if(checklogin == log ){
             if (NewUser.passwordS.equals(parol)) {
                 Connect.otpravit("Yes");
@@ -91,9 +100,9 @@ public class SignInController {
                 stage.show();
             } else {
                 Connect.otpravit("No");
-                System.out.println("Неверный пароль");}
+                FakePass.setOpacity(1);}
         }else {
             Connect.otpravit("No");
-            System.out.println("Логин не существует");}
+            FakeLogin.setOpacity(1);}
     }
 }

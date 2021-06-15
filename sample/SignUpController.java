@@ -80,6 +80,22 @@ public class SignUpController {
     private Text ErrorFakeLogin;
 
     @FXML
+    private Button BackBtn;
+
+    @FXML
+    void goBack(ActionEvent event) throws IOException {
+        Stage stage = (Stage) SignUpReg.getScene().getWindow();
+        stage.close();
+        FXMLLoader loader = new FXMLLoader(getClass().getResource("SignIn.fxml"));
+        Parent root = (Parent) loader.load();
+        stage = new Stage();
+        stage.setTitle("Bank System");
+        stage.setScene(new Scene(root,532,363));
+        stage.setResizable(false);
+        stage.show();
+    }
+
+    @FXML
     void SignUpAdresClicked(MouseEvent event) {
         ColorChange(SignUpAdress);
 

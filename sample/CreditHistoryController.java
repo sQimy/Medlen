@@ -61,7 +61,7 @@ public class CreditHistoryController {
         System.out.println("Сумма "+user.Cost());
         //usersData.add(new Drop_Form(user.cost,user.total,user.type, user.status));
         User1 usered = new User1();
-        usersData.add(new User1(user.Cost(), user.Total(), user.Type(),user.Status()));
+        usersData.add(new User1( user.Total(),user.Cost(), user.Type(),user.Status()));
 
         Cost.setCellValueFactory(new PropertyValueFactory<User1, Integer>("id"));
         Total.setCellValueFactory(new PropertyValueFactory<User1, Integer>("login"));
