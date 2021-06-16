@@ -62,7 +62,7 @@ public class contributionController {
     void Get(ActionEvent event) throws IOException {
         Connect.otpravit("1");
         int c = 2;
-        Credit_Form UserCredit = new Credit_Form(myRub,myRub+((myRub/100)*(c*age)),"vznos");
+        Credit_Form UserCredit = new Credit_Form(myRub,myRub+((myRub/100)*(c*age)),"взнос");
         Pack2(UserCredit);
         Stage stage = (Stage) contribute_btn.getScene().getWindow();
         stage.close();

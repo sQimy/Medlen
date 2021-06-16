@@ -1,6 +1,9 @@
 package sample;
 
+import javafx.collections.ObservableList;
+
 import java.io.*;
+import java.lang.reflect.Array;
 import java.net.Socket;
 
 public class Connect {
@@ -64,5 +67,12 @@ public class Connect {
         return DropUser;
     }
 
+    public static Object[] PackList() throws IOException, ClassNotFoundException {
+        ObjectInputStream objInputStream = null;
+        Socket s = SocketConnect();
+        objInputStream = new ObjectInputStream(socket.getInputStream());
+        Object[] list = (Object[]) objInputStream.readObject();
+        return list;
+    }
 
     }

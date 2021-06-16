@@ -73,7 +73,7 @@ public class crediteController {
     void Get(ActionEvent event) throws IOException {
         Connect.otpravit("1");
         int c = 9;
-        Credit_Form UserCredit = new Credit_Form(myRub,myRub+((myRub/100)*(c*age)),"credit");
+        Credit_Form UserCredit = new Credit_Form(myRub,myRub+((myRub/100)*(c*age)),"кредит");
         Pack2(UserCredit);
         Stage stage = (Stage) credit_btn.getScene().getWindow();
         stage.close();

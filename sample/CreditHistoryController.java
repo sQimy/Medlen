@@ -1,9 +1,8 @@
 package sample;
 
 import java.io.IOException;
-import java.io.ObjectInputStream;
-import java.net.URL;
-import java.util.ResourceBundle;
+import java.lang.reflect.Array;
+import java.util.Arrays;
 
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
@@ -19,6 +18,8 @@ import javafx.scene.control.cell.PropertyValueFactory;
 import javafx.stage.Stage;
 
 public class CreditHistoryController {
+
+    private ObservableList<Drop_Form> list = FXCollections.observableArrayList();
 
     private ObservableList<User1> usersData = FXCollections.observableArrayList();
 
@@ -57,18 +58,27 @@ public class CreditHistoryController {
 
     @FXML
     void initialize() throws IOException, ClassNotFoundException {
-        Drop_Form user = Connect.PackDrop();
-        System.out.println("Сумма "+user.Cost());
-        //usersData.add(new Drop_Form(user.cost,user.total,user.type, user.status));
+
+        int count = Connect.poluchit();
+        System.out.println("Получил кол-во строк "+count);
+        Object[] list = Connect.PackList();
         User1 usered = new User1();
-        usersData.add(new User1( user.Total(),user.Cost(), user.Type(),user.Status()));
+        for(int i=0;i<count*4;i+=4){
+            int f1 = (Integer) list[i];
+            int f2 = (Integer) list[i+1];
+            String f3 = (String) list[i+2];
+            String f4 = (String) list [i+3];
+            usersData.add(new User1(f1,f2,f3,f4));
+        }
+
 
         Cost.setCellValueFactory(new PropertyValueFactory<User1, Integer>("id"));
         Total.setCellValueFactory(new PropertyValueFactory<User1, Integer>("login"));
-        TypeCredit.setCellValueFactory(new PropertyValueFactory<User1, String>("password"));
-        idStatus.setCellValueFactory(new PropertyValueFactory<User1, String>("email"));
+        idStatus.setCellValueFactory(new PropertyValueFactory<User1, String>("password"));
+        TypeCredit.setCellValueFactory(new PropertyValueFactory<User1, String>("email"));
 
         NashaTable.setItems(usersData);
+
     }
 }
 

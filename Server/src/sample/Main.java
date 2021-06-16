@@ -1,7 +1,10 @@
 package sample;
 
+import javafx.collections.ObservableList;
+
 import javax.xml.crypto.Data;
 import java.io.*;
+import java.lang.reflect.Array;
 import java.net.ServerSocket;
 import java.net.Socket;
 
@@ -69,9 +72,16 @@ public class Main extends Thread {
                                     ScriptsSQL.addData(id, userCredit.cost, userCredit.total, userCredit.type);
                                 }
                                 if (get.equals("2")){
-                                    Drop_Form UserCredit = ScriptsSQL.dropData(id);
+                                    //Drop_Form UserCredit = ScriptsSQL.dropData(id);
+                                    int row = ScriptsSQL.uznatStroki(id);
+                                    System.out.println("Кол-во строк "+row);
+                                    clientout.writeInt(row);
+                                    Object[] array = ScriptsSQL.dropData(id,row);
                                     objOutputStream = new ObjectOutputStream(socket.getOutputStream());
-                                    objOutputStream.writeObject(UserCredit);
+                                    objOutputStream.writeObject(array);
+
+
+                                    //objOutputStream.writeObject(list.toArray());
                                 }
                             }
                         }else{System.out.println("Что ты задумал?");}

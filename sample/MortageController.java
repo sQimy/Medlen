@@ -72,7 +72,7 @@ public class MortageController {
     void Get(ActionEvent event) throws IOException {
         Connect.otpravit("1");
         int c = 5;
-        Credit_Form UserCredit = new Credit_Form(myRub,myRub+((myRub/100)*(c*age)),"ipoteka");
+        Credit_Form UserCredit = new Credit_Form(myRub,myRub+((myRub/100)*(c*age)),"ипотека");
         Pack2(UserCredit);
         Stage stage = (Stage) mortgage_btn.getScene().getWindow();
         stage.close();

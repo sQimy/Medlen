@@ -8,13 +8,13 @@ class Drop_Form implements Serializable {
 
     private static final long serialVersionUID = 1L;
 
-    private int cost;
-    private int total;
-    private String type;
-    private String status;
+    private Object cost;
+    private Object total;
+    private Object type;
+    private Object status;
 
 
-    public Drop_Form(int cost, int total, String type, String status)
+    public Drop_Form(Object cost, Object total, Object type, Object status)
     {
         this.cost = cost;
         this.total = total;
@@ -22,13 +22,13 @@ class Drop_Form implements Serializable {
         this.status = status;
     }
 
-    public int Cost() { return cost; }
+    public Object Cost() { return cost; }
 
-    public int Total() { return total;}
+    public Object Total() { return total;}
 
-    public String Type() { return type;}
+    public Object Type() { return type;}
 
-    public String Status() { return status; }
+    public Object Status() { return status; }
 
 
 }

@@ -2,6 +2,7 @@
 
 <?import javafx.scene.Cursor?>
 <?import javafx.scene.control.Button?>
+<?import javafx.scene.control.PasswordField?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.effect.ColorAdjust?>
 <?import javafx.scene.image.Image?>
@@ -17,10 +18,11 @@
          <font>
             <Font size="16.0" />
          </font></TextField>
-      <TextField fx:id="SignInPassword" layoutX="128.0" layoutY="163.0" onMouseClicked="#SigInPassClick" prefHeight="40.0" prefWidth="276.0" promptText="Пароль" style="-fx-background-color: #3a3c49;-fx-text-fill: #c7fcec;">
+      <PasswordField fx:id="SignInPassword" layoutX="128.0" layoutY="162.0" onMouseClicked="#SigInPassClick" prefHeight="40.0" prefWidth="276.0" promptText="Пароль" style="-fx-background-color: #3a3c49; -fx-text-fill: #c7fcec;">
          <font>
             <Font size="16.0" />
-         </font></TextField>
+         </font>
+      </PasswordField>
       <Button fx:id="SignInBtn" layoutX="186.0" layoutY="228.0" mnemonicParsing="false" onAction="#Vhod" prefHeight="39.0" prefWidth="160.0" style="-fx-background-radius: 50; -fx-border-style: 50; -fx-background-color: #39b8b8;" text="Войти" textFill="WHITE">
          <font>
             <Font size="18.0" />
